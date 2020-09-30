@@ -8,8 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "axios": "^0.20.0",
+    "cloudinary": "^1.23.0",
+    "emotion-theming": "^10.0.27",
+    "firebase": "^7.21.1",
+    "formik": "^2.1.5",
+    "mongoose": "^5.10.7",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-firebase-hooks": "^2.2.0",
+    "react-google-button": "^0.7.1",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.8.10"
   }
 }
