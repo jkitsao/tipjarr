@@ -11,8 +11,11 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@tailwindcss/typography": "^0.2.0",
     "axios": "^0.20.0",
     "cloudinary": "^1.23.0",
+    "dayjs": "^1.9.1",
+    "draft-js": "^0.11.7",
     "emotion-theming": "^10.0.27",
     "firebase": "^7.21.1",
     "formik": "^2.1.5",
@@ -22,6 +25,9 @@
     "react-dom": "16.13.1",
     "react-firebase-hooks": "^2.2.0",
     "react-google-button": "^0.7.1",
+    "react-select": "^3.1.0",
+    "suneditor-react": "^2.14.2",
+    "swr": "^0.3.5",
     "yup": "^0.29.3"
   },
   "devDependencies": {

@@ -12,12 +12,12 @@ const TipSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  link: {
+    type: Object,
+  },
   imageData: {
     type: Object,
     // required:true,
-  },
-  link: {
-    type: String,
   },
   createdAt: {
     type: Date,

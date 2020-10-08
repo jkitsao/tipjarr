@@ -5,8 +5,17 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        lg: "15.5rem",
+        xl: "20rem",
+      },
+    },
   },
   variants: {},
-  plugins: [],
-}
+  // plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    // ...
+  ],
+};

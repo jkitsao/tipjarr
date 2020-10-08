@@ -78,7 +78,7 @@ const Settings = () => {
                 username: values.username,
                 email: email,
                 bio: values.bio,
-                uid: values.uid,
+                uid: user.uid,
                 image: image,
               };
               alert(JSON.stringify(profileData, null, 2));

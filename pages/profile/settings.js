@@ -12,17 +12,15 @@ function signup() {
   }, [currentUser]);
   return (
     <div className="h-full bg-gray-900">
-      {user ? (
-        <Settings user={user} />
-      ) : (
-        <Spinner
+      <Settings user={user} />
+
+      {/* <Spinner
           thickness="4px"
           speed="0.65s"
           emptyColor="gray.200"
           color="blue.500"
           size="xl"
-        />
-      )}
+        /> */}
     </div>
   );
 }

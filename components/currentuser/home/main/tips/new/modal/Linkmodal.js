@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/core";
+function Linkmodal({ setLinks }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [linkTitle, setLinkTitle] = useState("");
+  const [linkBody, setLinkBody] = useState("");
+
+  const handleLinkSubmit = () => {
+    // let links = {
+    //   title: linkTitle,
+    //   source: linkBody,
+    // };
+    setLinks({ title: linkTitle, source: linkBody });
+    // alert(JSON.stringify(links));
+    onClose();
+  };
+  return (
+    <>
+      {/* <Button onClick={onOpen}>Open Modal</Button> */}
+      <div className="px-4 py-2 rounded-lg hover:bg-gray-900 cursor-pointer">
+        <img
+          src="https://img.icons8.com/color/344/dynamic-links.png"
+          className="h-12 "
+          title="add link"
+          onClick={onOpen}
+        />
+        {/* <span>image</span> */}
+      </div>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+
+          <ModalBody className="">
+            <h2 className="text-lg font-semibold text-blue-900 mt-3">
+              Link title
+            </h2>
+
+            <div>
+              <input
+                type="text"
+                className="w-full py-2  px-2  border-2 border-gray-500 rounded-md"
+                placeholder="link title"
+                value={linkTitle}
+                onChange={(e) => setLinkTitle(e.target.value)}
+              />
+            </div>
+            {/* <ModalHeader>Link source</ModalHeader> */}
+            <h2 className="text-lg font-semibold text-blue-900">Link source</h2>
+            <div>
+              <input
+                type="text"
+                className="w-full py-2  px-2 border-2 border-gray-500 rounded-md"
+                placeholder="http://www.tipjarr.app/foobar"
+                value={linkBody}
+                onChange={(e) => setLinkBody(e.target.value)}
+              />
+            </div>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button variantColor="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variantColor="green" onClick={handleLinkSubmit}>
+              Submit
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
+
+export default Linkmodal;

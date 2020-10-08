@@ -7,22 +7,24 @@ export default async (req, res) => {
     //handle post request to /api/user
     //add new user
     // res.json(req.body);
-    const { title, body, image } = req.body.tip;
-    const imageData = await imageUploader(image);
-    console.log({ imageData });
+    const { title, body, image, links } = req.body.tip;
+    const imageData = image ? await imageUploader(image) : {};
+    console.log(req.body);
     Tip.create({
       title,
       body,
+      link: links,
       imageData,
     })
-      .then((user, err) => {
-        res.json({ user, err });
+      .then((tip) => {
+        res.json({ tip });
       })
       .catch((err) => console.log({ err }));
   } else if (req.method === "GET") {
     // Handle any other HTTP method
     // if get request return all users
     Tip.find({})
+      .sort("createdAt")
       .then((tips, err) => {
         res.json({ tips, err });
       })
