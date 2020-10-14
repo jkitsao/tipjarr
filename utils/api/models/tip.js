@@ -8,6 +8,10 @@ const TipSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  user: {
+    type: Object,
+    required: true,
+  },
   likes: {
     type: Number,
     default: 0,
@@ -18,6 +22,9 @@ const TipSchema = new mongoose.Schema({
   imageData: {
     type: Object,
     // required:true,
+  },
+  code: {
+    type: String,
   },
   createdAt: {
     type: Date,

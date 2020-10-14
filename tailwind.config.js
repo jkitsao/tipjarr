@@ -9,6 +9,8 @@ module.exports = {
       height: {
         lg: "15.5rem",
         xl: "20rem",
+        xxl: "25rem",
+        cxl: "23rem",
       },
     },
   },

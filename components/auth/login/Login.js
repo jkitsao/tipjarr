@@ -38,7 +38,7 @@ const Login = () => {
         // The signed-in user info.
         // var user = result.user;
         setSuccess(true);
-        router.push("/profile/settings");
+        router.push("/home");
         // ...
       })
       .catch(function (error) {
@@ -100,21 +100,6 @@ const Login = () => {
           }) => (
             <form onSubmit={handleSubmit}>
               <div>
-                {/* <div className="mb-3">
-                  <div className="text-green-700 text-sm my-1">Fullname</div>
-                  <input
-                    type="text"
-                    name="name"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.name}
-                    className=" py-2 w-full bg-gray-100 border border-gray-300 px-2 outline-none focus:outline-none focus:border-green-400 "
-                    autoComplete="off"
-                  />
-                  <div className="text-red-700 text-xs">
-                    {errors.name && touched.email && errors.name}
-                  </div>
-                </div> */}
                 <div className="mb-3">
                   <div className="text-green-700 text-sm my-1">Email</div>
                   <input

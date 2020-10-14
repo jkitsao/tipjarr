@@ -17,13 +17,13 @@ function Card_footer() {
     <div className="py-3  rounded px-2 hidden sm:block ">
       <div className="flex px-2 justify-between">
         <div class="px-6">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span class="inline-block rounded-full px-1 py-1 text-sm font-semibold text-blue-600 hover:text-blue-500 mb-2">
             #javascript
           </span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span class="inline-block rounded-full px-1 py-1 text-sm font-semibold text-blue-600 hover:text-blue-500 mb-2">
             #Html
           </span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          <span class="inline-block rounded-full px-1 py-1 text-sm font-semibold text-blue-600 hover:text-blue-500 mb-2">
             #css
           </span>
         </div>

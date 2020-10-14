@@ -1,20 +1,25 @@
+import React, { useContext, useEffect } from "react";
 import { Select } from "@chakra-ui/core";
-import React from "react";
 import Navbar from "../navbar/Navbar";
 import Content from "./main/Content";
 // import MyComponent from "./main/select/Select";
 // import Link from "next/link";
 // import MyComponent from "./main/select/Select";
 // import Filter from "./main/select/Select";
-function Home({ data, user }) {
+import { UserInfo } from "../../../context/UserInfo";
+function Home({ data }) {
+  const { userInfo } = useContext(UserInfo);
+  useEffect(() => {
+    console.log({ userInfo });
+  }, [userInfo]);
   return (
     <div>
       <section className="sticky inset-0">
         <Navbar />
       </section>
-      <div className="px-5 lg:px-16">
+      <div className="px-5  lg:px-16">
         <section className="">
-          <Content data={data} user={user} />
+          <Content data={data} />
           {/* <Content data={data} /> */}
         </section>
       </div>

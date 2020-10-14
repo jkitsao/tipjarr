@@ -4,8 +4,9 @@ import axios from "axios";
 import { useRouter } from "next/router";
 // import { RichEditorExample } from "./Richtext";
 import Linkmodal from "./modal/Linkmodal";
-import { useDisclosure } from "@chakra-ui/core";
-function Newtip() {
+// import { useDisclosure } from "@chakra-ui/core";
+import Editormodal from "./modal/Editor";
+function Newtip({ user }) {
   const [fileInput, setFileInput] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [image, setImage] = useState(null);
@@ -13,6 +14,7 @@ function Newtip() {
   const [body, setBody] = useState("");
   const [submiting, setSubmiting] = useState(false);
   const [links, setLinks] = useState({});
+  const [code, setCode] = useState();
   // const { isOpen, onOpen, onClose } = useDisclosure();/
 
   //function to handle user input file
@@ -44,15 +46,15 @@ function Newtip() {
     if (!title || !body) return;
     setSubmiting(true);
     // const image = previewSource;
-    const tip = { title, body, image, links };
-    alert(JSON.stringify(tip, null, 2));
+    const tip = { title, body, image, links, user, code };
+    // alert(JSON.stringify(tip, null, 2));
     // setSubmiting(false);
 
     axios
       .post(`/api/tips`, { tip })
       .then((res) => {
         // console.log(res);
-        alert(JSON.stringify(tip, null, 2));
+        // alert(JSON.stringify(tip, null, 2));
         router.push("/home");
         setSubmiting(false);
       })
@@ -63,15 +65,15 @@ function Newtip() {
   };
   return (
     <div className="py-12 px-3">
-      <form onSubmit={handleSubmit}>
-        <section className="w-full lg:w-1/2 mx-auto px-5 bg-gray-800 rounded-t py-5 ">
+      <form onSubmit={handleSubmit} className="">
+        <section className="w-full lg:w-1/3 mx-auto px-5 bg-gray-800 rounded-t py-5 ">
           <div>
             <div className="py-2">
               <h2 className="font-semibold text-2xl text-gray-400">
                 Tip title
               </h2>
             </div>
-            <div className="w-full lg:w-3/4">
+            <div className="w-full">
               <Input
                 placeholder="Title"
                 size="lg"
@@ -85,7 +87,7 @@ function Newtip() {
           </div>
         </section>
         {previewSource && (
-          <div className="m-2 w-full lg:w-1/2 mx-auto relative  border-8 ">
+          <div className="m-2 w-full lg:w-1/3 mx-auto relative  border-8 ">
             <img
               src={previewSource}
               alt=""
@@ -110,11 +112,11 @@ function Newtip() {
             </span>
           </div>
         )}
-        <section className="w-full lg:w-1/2 mx-auto px-5 bg-gray-800 rounded-b py-5 ">
+        <section className="w-full lg:w-1/3 mx-auto px-5 bg-gray-800 rounded-b pb-3">
           <div>
             <div className="py-2">
               <h2 className="font-semibold text-2xl text-gray-400">
-                Description
+                Resources
               </h2>
               <div className="flex">
                 <div className="px-4 py-2 rounded-lg relative hover:bg-gray-900 cursor-pointer">
@@ -133,9 +135,13 @@ function Newtip() {
                   {/* <span className="text-sm text-gray-400">image</span> */}
                 </div>
                 <Linkmodal setLinks={setLinks} />
+                <Editormodal setCode={setCode} />
               </div>
             </div>
-            <div className="w-full lg:w-3/4">
+            <h2 className="font-semibold text-2xl text-gray-400 my-2">
+              Description
+            </h2>
+            <div className="w-full">
               <Textarea
                 placeholder="Write tip here"
                 className="text-gray-800 p-3"
@@ -155,11 +161,11 @@ function Newtip() {
               // onBlur={handleBlur}
             /> */}
           </div>
-          <div className="py-4">
+          <div className="py-4 mb-4 lg:pt-6">
             <button
               type="submit"
               disabled={submiting}
-              class="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold px-4 py-2 rounded"
+              className="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold w-full px-4 py-4 rounded"
             >
               Post tip
               {submiting && <Spinner size="sm" className="mt-1 mx-1" />}

@@ -20,6 +20,7 @@ function Linkmodal({ setLinks }) {
     //   title: linkTitle,
     //   source: linkBody,
     // };
+    if (!linkBody || !linkTitle) return;
     setLinks({ title: linkTitle, source: linkBody });
     // alert(JSON.stringify(links));
     onClose();
@@ -27,7 +28,7 @@ function Linkmodal({ setLinks }) {
   return (
     <>
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
-      <div className="px-4 py-2 rounded-lg hover:bg-gray-900 cursor-pointer">
+      <div className="px-4 py-2 rounded-lg hover:bg-gray-900 cursor-pointer mx-2">
         <img
           src="https://img.icons8.com/color/344/dynamic-links.png"
           className="h-12 "
@@ -44,24 +45,24 @@ function Linkmodal({ setLinks }) {
 
           <ModalBody className="">
             <h2 className="text-lg font-semibold text-blue-900 mt-3">
-              Link title
+              Website name
             </h2>
 
             <div>
               <input
                 type="text"
-                className="w-full py-2  px-2  border-2 border-gray-500 rounded-md"
-                placeholder="link title"
+                className="w-full py-2  px-2  border-2 border-gray-500 focus:outline-none focus:border-green-600 text-sm text-gray-700 rounded-md"
+                placeholder="tipjarr.app"
                 value={linkTitle}
                 onChange={(e) => setLinkTitle(e.target.value)}
               />
             </div>
             {/* <ModalHeader>Link source</ModalHeader> */}
-            <h2 className="text-lg font-semibold text-blue-900">Link source</h2>
+            <h2 className="text-lg font-semibold text-blue-900">Website url</h2>
             <div>
               <input
                 type="text"
-                className="w-full py-2  px-2 border-2 border-gray-500 rounded-md"
+                className="w-full py-2  px-2 border-2 border-gray-500 focus:outline-none focus:border-green-600 text-sm text-gray-700 rounded-md"
                 placeholder="http://www.tipjarr.app/foobar"
                 value={linkBody}
                 onChange={(e) => setLinkBody(e.target.value)}

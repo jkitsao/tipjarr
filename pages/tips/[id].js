@@ -12,7 +12,6 @@ function Singletip() {
   return (
     <div>
       <div>{data && <Tip tip={data.tip} />}</div>
-
       <h2>{!data && "Loading please wait"}</h2>
       <h2>{error && "there was an error"}</h2>
     </div>

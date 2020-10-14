@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function LeftNav() {
   return (
-    <section className=" lg:px-12  rounded-md lg:shadow-inner lg:my-3 lg:border-r">
-      <div className="flex lg:block py-5 text-gray-800 font-semibold">
+    <section className=" lg:px-12  rounded-md  lg:my-3 border">
+      <div className="flex lg:block py-2 sm:py-5 text-gray-800 font-semibold ">
         <span className="block py-2 px-3 my-2 cursor-pointer hover:bg-gray-300 hover:text-gray-800 rounded-md">
           Popular
         </span>

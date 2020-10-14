@@ -1,19 +1,21 @@
 import React, { createContext, useState, useEffect } from "react";
 import { firebase } from "../configs/firebase";
+import axios from "axios";
 export const UserContext = createContext();
 export function UsercontextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  // const [user, setUser] = useState({});
   useEffect(() => {
-    const unSubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) setCurrentUser(user);
-      setCurrentUser(false);
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
     });
-    return () => unSubscribe();
+    return () => unsubscribe();
   }, []);
   return (
     <UserContext.Provider value={[currentUser, setCurrentUser]}>
-      {children}
+      {!loading && children}
     </UserContext.Provider>
   );
 }

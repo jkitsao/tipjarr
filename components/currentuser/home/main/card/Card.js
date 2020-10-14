@@ -3,21 +3,24 @@ import Card_info from "./components/Card_info";
 import Card_footer from "./components/Card_footer";
 import Link from "next/link";
 function Card({ tip }) {
+  const { title } = tip;
+  // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
-    <div className="w-full lg:w-full overflow-hidden hover:border border-gray-700 shadow-lg bg-white mx-auto my-2 cursor-pointer rounded-md ">
-      <Link href={`/tips/${tip._id}`}>
-        <a>
-          <Card_info tip={tip} />
-          <div className="p-2">
-            {tip?.link ? (
-              <a
-                href={`${tip?.link?.source}`}
-                className="text-xs ml-2 bg-teal-500 p-1 my-2 text-gray-100 font-semibold rounded-lg"
-              >
-                {tip?.link?.title}
-              </a>
-            ) : null}
-            <h1 className="text-lg text-gray-700 hover:text-gray-800 font-semibold">
+    <div className="w-full lg:w-full overflow-hidden border-2 hover:border-gray-500 shadow-lg bg-white mx-auto my-2 cursor-pointer rounded-md ">
+      <Card_info tip={tip} />
+      <div className="p-2">
+        {tip?.link ? (
+          <a
+            href={`${tip?.link?.source}`}
+            target="_blank"
+            className="text-xs ml-2 bg-teal-500 p-1 my-2 text-gray-100 font-semibold rounded-lg"
+          >
+            {tip?.link?.title}
+          </a>
+        ) : null}
+        <Link href={`/tips/${tip._id}`}>
+          <a>
+            <h1 className="text-lg text-gray-900 hover:text-gray-800 font-semibold">
               {/* <img
               src="https://img.icons8.com/color/344/idea.png"
               alt=""
@@ -27,18 +30,19 @@ function Card({ tip }) {
                 {tip.title}
               </span>
             </h1>
-            <h2 className="text-sm  text-gray-700 inline-block lg:my-2 px-3">
-              {tip.body.slice(0, 200)}...
-            </h2>
-          </div>
-        </a>
-      </Link>
+          </a>
+        </Link>
+        <h2 className="text-sm  text-green-900 inline-block lg:my-2 px-3">
+          {tip.body.slice(0, 200)}...
+        </h2>
+      </div>
+
       {
-        tip.imageData ? (
-          <div>
+        tip?.imageData?.url ? (
+          <div className="p-1">
             <img
               src={tip.imageData.secure_url}
-              className="object-cover h-xl w-full lg:mx-2  rounded "
+              className="object-cover h-lg w-full lg:mx-2  rounded "
             />
           </div>
         ) : (

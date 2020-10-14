@@ -3,14 +3,17 @@ import "../styles/globals.css";
 // import "suneditor/dist/css/suneditor.min.css";
 import "draft-js/dist/Draft.css";
 import { UsercontextProvider, UserContext } from "../context/UserContext";
+import { UserInfoProvider } from "../context/UserInfo";
 import { ThemeProvider } from "@chakra-ui/core";
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <UsercontextProvider>
-        <Component {...pageProps} />
-      </UsercontextProvider>
-    </ThemeProvider>
+    <UsercontextProvider>
+      <UserInfoProvider>
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </UserInfoProvider>
+    </UsercontextProvider>
   );
 }
 

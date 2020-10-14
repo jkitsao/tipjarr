@@ -5,8 +5,9 @@ import { PseudoBox } from "@chakra-ui/core";
 import Link from "next/link";
 import LeftNav from "./left-nav/LeftNav";
 import Rightbar from "./left-nav/right-section/Rightbar";
+import Userbar from "./top_user_bar/Userbar";
 
-function Content({ data, user }) {
+function Content({ data }) {
   console.log({ data });
   return (
     <div className="sm:flex justify-center">
@@ -16,15 +17,8 @@ function Content({ data, user }) {
         {/* <LeftNav /> */}
       </div>
       <div className="lg:w-1/3 lg:py-6">
-        <div className="text-center border-2 shadow-md my-3">
-          <iframe
-            src="https://giphy.com/embed/SUj2bzYiaMcqIOCVRr"
-            width="100"
-            height="200"
-            frameBorder="0"
-            class="giphy-embed mx-auto w-full h-48"
-            allowFullScreen
-          ></iframe>
+        <div className="">
+          <Userbar />
         </div>
         <div className="no-stretching ">
           {data.tips.map((data) => (
@@ -36,7 +30,7 @@ function Content({ data, user }) {
         className="lg:w-1/4 py-4 px-3"
         // style={{ position: "-webkit-sticky" }}
       >
-        <Rightbar user={user} />
+        <Rightbar />
         {/* <Rightbar /> */}
       </div>
     </div>

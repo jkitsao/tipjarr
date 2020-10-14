@@ -3,16 +3,16 @@ import Settings from "../../components/settings/Settings";
 import { UserContext } from "../../context/UserContext";
 import { Spinner } from "@chakra-ui/core";
 
-function signup() {
-  const [currentUser, setCurrentUser] = useContext(UserContext);
-  //   console.log({ currentUser });
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    if (currentUser) setUser(currentUser);
-  }, [currentUser]);
+function SettingsPage() {
+  // const [currentUser, setCurrentUser] = useContext(UserContext);
+  // //   console.log({ currentUser });
+  // const [user, setUser] = useState(null);
+  // useEffect(() => {
+  //   if (currentUser) setUser(currentUser);
+  // }, [currentUser]);
   return (
     <div className="h-full bg-gray-900">
-      <Settings user={user} />
+      <Settings />
 
       {/* <Spinner
           thickness="4px"
@@ -25,4 +25,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default SettingsPage;

@@ -26,20 +26,22 @@ function Card_info({ tip }) {
   const mydate = dayjs();
   const c = mydate.from(date);
   return (
-    <div className="mb-2 bg-blue-900 py-3">
-      <div className="flex px-2 justify-between">
+    <div className="mb-2 px-2 py-3">
+      <div className="flex px-2">
         <div className="inline-block">
           <img
             src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80"
             alt=""
-            className="h-8 w-8 rounded-full object-cover border-2 border-gray-600 inline"
+            className="h-8 w-8 rounded-full object-cover inline"
           />
-          <span className="inline-block mx-3 text-xs text-gray-300 font-semibold">
-            Kitsao
+          <span className="inline-block mx-3 text-xs text-gray-800 font-semibold">
+            {tip?.user?.username ? tip?.user?.username : "tipjarr"}
           </span>
         </div>
         <div>
-          <span className="text-xs text-gray-300 font-semibold">{c} ago</span>
+          <div className="text-xs text-gray-800 font-semibold pt-2">
+            {c} ago
+          </div>
         </div>
       </div>
     </div>
