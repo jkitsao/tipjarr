@@ -5,10 +5,12 @@ import { UserContext } from "../context/UserContext";
 import Content_loader from "../components/currentuser/home/loaders/Content_loader";
 import axios from "axios";
 import useSWR from "swr";
+import { useRouter } from "next/router";
 
 function NewTip() {
   const [currentUser, setCurrentUser] = useContext(UserContext);
   const [user, setUser] = useState(null);
+  const router = useRouter();
   useEffect(() => {
     if (currentUser) {
       axios.get(`/api/users/${currentUser.uid}`).then((res) => {
@@ -16,6 +18,7 @@ function NewTip() {
         setUser(user);
       });
     }
+    if (currentUser === null && !user) router.push("/auth/login");
   }, [currentUser]);
   console.log({ user });
   console.log({ currentUser });

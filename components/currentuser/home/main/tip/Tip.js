@@ -18,7 +18,7 @@ function Tip({ tip }) {
       <div className="">{/* <Tipbar /> */}</div>
       <div className="flex flex-col justify-center pt-3">
         <div className="lg:w-1/2 lg:mx-auto   sm:shadow-lg sm:rounded-md lg:pb-12">
-          <div className="p-4 sticky top-0 w-full bg-gray-800 z-50">
+          <div className="p-4 sticky top-0 w-full bg-gray-800 border-b-4 border-yellow-500 z-50">
             <span>
               <Link href="/home">
                 <a className="text-sm text-gray-200">

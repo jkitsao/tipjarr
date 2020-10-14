@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import useSWR from "swr";
 import Tip from "../../components/currentuser/home/main/tip/Tip";
+import Content_loader from "../../components/currentuser/home/loaders/Content_loader";
 function Singletip() {
   const router = useRouter();
   const { id } = router.query;
@@ -12,8 +13,8 @@ function Singletip() {
   return (
     <div>
       <div>{data && <Tip tip={data.tip} />}</div>
-      <h2>{!data && "Loading please wait"}</h2>
-      <h2>{error && "there was an error"}</h2>
+      <h2>{!data && <Content_loader />}</h2>
+      <h2>{error && <Content_loader msg={"network error"} />}</h2>
     </div>
   );
 }

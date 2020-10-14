@@ -31,29 +31,35 @@ function ToggleCodeImg({ tip }) {
       </span>
       <div className="flex my-2 lg:my-5 lg:px-10">
         <button
-          className="w-1/2 py-2 bg-green-700 text-gray-300 rounded-md border  text-center font-semibold"
-          //   onClick={() => setIsCodeOpen(!isCodeOpen)}
+          className={`w-1/2 py-2 text-gray-300 rounded mx-1 transition duration-700 ease-in-out outline-none focus:outline-none  text-center font-semibold ${
+            isCodeOpen
+              ? " bg-green-700 border-b-4 border-yellow-500"
+              : "bg-blue-700"
+          }`}
           onClick={handleShowCode}
         >
           {isCodeOpen ? "code" : "show code"}
         </button>
         <button
-          className="w-1/2 py-2 bg-green-700 text-gray-300 rounded-md border  text-center font-semibold"
-          //   onClick={() => setisImageOpen(!isImageOpen)}
+          className={`w-1/2 py-2 text-gray-300 rounded mx-1 transition duration-500 ease-in-out outline-none focus:outline-none  text-center font-semibold ${
+            isImageOpen
+              ? " bg-green-700 border-b-4 border-yellow-500"
+              : "bg-blue-700"
+          }`}
           onClick={handleShowImage}
         >
           {isImageOpen ? "image" : "show image"}
         </button>
       </div>
       {(tip?.code && isCodeOpen) || !tip?.imageData ? (
-        <div className="sm:px-3 mx-auto w-full">
+        <div className="sm:px-3 mx-auto w-full transition duration-400 ease-in-out">
           <TipEditor tip={tip} />
         </div>
       ) : (
         ""
       )}
       {(tip?.imageData && isImageOpen) || !tip?.code ? (
-        <div className="lg:px-3 lg:mx-auto w-full h-full lg:w-full lg:h-xxl">
+        <div className="lg:px-3 lg:mx-auto w-full h-full lg:w-full transition duration-400 ease-in-out lg:h-xxl">
           <img
             src={tip?.imageData?.secure_url}
             alt={tip?.title}
