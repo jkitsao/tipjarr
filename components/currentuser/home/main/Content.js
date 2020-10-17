@@ -16,11 +16,11 @@ function Content({ data }) {
         <LeftNav />
         {/* <LeftNav /> */}
       </div>
-      <div className="lg:w-1/3 lg:py-6">
+      <div className="lg:w-2/5 lg:py-6">
         {/* <div className="">
           <Userbar />
         </div> */}
-        <div className="w-1/2 ">
+        <div className="w-3/4 ">
           <Select placeholder="Filter">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>

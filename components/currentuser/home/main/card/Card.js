@@ -7,18 +7,18 @@ function Card({ tip }) {
   const { title } = tip;
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
-    <div className="w-full lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md ">
+    <div className="w-full lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
         <Link href={`/tips/${tip._id}`}>
           <a>
-            <h1 className="text-lg text-gray-900 hover:text-gray-800 font-semibold">
+            <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
               {/* <img
               src="https://img.icons8.com/color/344/idea.png"
               alt=""
               className="h-6 w-6 hidden sm:inline-block ml-2 mx-1"
             /> */}
-              <span className="text-lg sm:text-xl inline-block px-3">
+              <span className="text-lg sm:text-xl hover:underline inline-block px-3">
                 {tip.title}
               </span>
             </h1>

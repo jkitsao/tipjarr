@@ -42,7 +42,7 @@ function Tip({ tip }) {
           </div>
           {tip?.link ? (
             <div
-              className="p-3 bg-gray-100 w-1/3 text-blue-500 mx-6 rounded-sm"
+              className="p-3 bg-gray-100 w-3/4 lg:w-1/3 text-blue-500 mx-6 rounded-sm"
               title={tip?.link?.title}
             >
               <svg
