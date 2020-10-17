@@ -16,7 +16,7 @@ function Content({ data }) {
         <LeftNav />
         {/* <LeftNav /> */}
       </div>
-      <div className="lg:w-2/5 lg:py-6">
+      <div className=" lg:w-p-card lg:py-6">
         {/* <div className="">
           <Userbar />
         </div> */}
