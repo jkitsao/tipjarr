@@ -20,13 +20,13 @@ function Content({ data }) {
         {/* <div className="">
           <Userbar />
         </div> */}
-        <div className="w-3/4 ">
-          <Select placeholder="Filter">
+        {/* <div className="w-3/4 z-0">
+          <Select placeholder="Filter" zIndex="0" className="z-0">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
           </Select>
-        </div>
+        </div> */}
         <div className="no-stretching">
           {data.tips.map((data) => (
             <Card tip={data} key={data._id} />

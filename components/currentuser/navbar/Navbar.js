@@ -5,7 +5,10 @@ function Navbar() {
   const [toggleDrop, setToggleDrop] = useState(false);
   const [togglemenu, setToggleMenu] = useState(false);
   return (
-    <nav className="bg-gray-200 sticky top-0 border-b-2 border-teal-500 shadow-md z-auto">
+    <nav
+      className="bg-gray-200 sticky top-0 border-b-2 border-teal-500 shadow-md  z-50"
+      style={{ zIndex: "1000" }}
+    >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">

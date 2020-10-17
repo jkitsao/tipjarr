@@ -17,7 +17,7 @@ function Home({ data }) {
       <section className="sticky inset-0">
         <Navbar />
       </section>
-      <div className="px-5  lg:px-16">
+      <div className="px-2  lg:px-16">
         <section className="">
           <Content data={data} />
           {/* <Content data={data} /> */}
