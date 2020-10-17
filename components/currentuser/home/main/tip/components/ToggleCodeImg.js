@@ -69,8 +69,8 @@ function ToggleCodeImg({ tip }) {
       {(tip?.code && isCodeOpen) || !tip?.imageData ? (
         <motion.div
           className="sm:px-3 mx-auto w-full transition duration-400 ease-in-out"
-          initial={{ x: -500 }}
-          animate={{ x: 0 }}
+          initial={{ x: -30, opacity: 0.5 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
@@ -85,8 +85,8 @@ function ToggleCodeImg({ tip }) {
       {(tip?.imageData && isImageOpen) || !tip?.code ? (
         <motion.div
           className="lg:px-3 lg:mx-auto w-full h-full lg:w-full transition duration-400 ease-in-out lg:h-xxl"
-          initial={{ x: 500 }}
-          animate={{ x: 0 }}
+          initial={{ x: 30, opacity: 0.5 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             type: "spring",
             stiffness: 260,
