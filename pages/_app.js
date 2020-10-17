@@ -7,15 +7,21 @@ import "draft-js/dist/Draft.css";
 import { UsercontextProvider, UserContext } from "../context/UserContext";
 import { UserInfoProvider } from "../context/UserInfo";
 import { ThemeProvider } from "@chakra-ui/core";
+import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
-    <UsercontextProvider>
-      <UserInfoProvider>
-        <ThemeProvider>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </UserInfoProvider>
-    </UsercontextProvider>
+    <>
+      <Head>
+        <link rel="icon" type="image/png" href="/fav.png" />
+      </Head>
+      <UsercontextProvider>
+        <UserInfoProvider>
+          <ThemeProvider>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </UserInfoProvider>
+      </UsercontextProvider>
+    </>
   );
 }
 

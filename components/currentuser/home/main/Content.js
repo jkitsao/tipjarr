@@ -10,13 +10,13 @@ import Rightbar from "./left-nav/right-section/Rightbar";
 function Content({ data }) {
   console.log({ data });
   return (
-    <div className="sm:flex justify-center">
+    <div className="lg:flex py-2 justify-center">
       {/* flex no-stretching flex-wrap justify-center */}
-      <div className="px-6 mr-5">
+      <div className=" hidden sm:block  px-6 mr-5">
         <LeftNav />
         {/* <LeftNav /> */}
       </div>
-      <div className=" lg:w-p-card lg:py-6">
+      <div className="w-full sm:w-1/2 lg:w-p-card lg:py-6">
         {/* <div className="">
           <Userbar />
         </div> */}
