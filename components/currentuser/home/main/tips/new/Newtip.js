@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Linkmodal from "./modal/Linkmodal";
 // import { useDisclosure } from "@chakra-ui/core";
 import Editormodal from "./modal/Editor";
+import EditorContainer from "./Richtext";
 function Newtip({ user }) {
   const [fileInput, setFileInput] = useState("");
   const [previewSource, setPreviewSource] = useState("");
@@ -154,12 +155,9 @@ function Newtip({ user }) {
                 value={body}
                 onChange={({ target }) => setBody(target.value)}
               />
+
+              {/* <EditorContainer /> */}
             </div>
-            {/* <RichEditorExample
-              editorState={"hello"}
-              // onChange={setFieldValue}
-              // onBlur={handleBlur}
-            /> */}
           </div>
           <div className="py-4 mb-4 lg:pt-6">
             <button

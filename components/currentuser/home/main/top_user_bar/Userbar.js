@@ -26,7 +26,7 @@ function Userbar() {
                   zIndex="0"
                 />
                 <span className="ml-4 mt-3 inline-block text-sm text-blue-600">
-                  {userInfo && userInfo.username}
+                  {userInfo && userInfo.name}
                 </span>
               </Box>
               <Icon size="12px" name={isExpanded ? "minus" : "add"} />

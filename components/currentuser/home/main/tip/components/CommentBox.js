@@ -2,12 +2,26 @@ import React, { useState, useContext } from "react";
 // import axios from "axios";
 // import { UserInfo } from "../../../../../../context/UserInfo";
 // import useSwr, { mutate, trigger } from "swr";
-function CommentBox({ setCommentValue, handleSubmit, commentValue, userInfo }) {
+import { Icon } from "@chakra-ui/core";
+function CommentBox({
+  setCommentValue,
+  handleSubmit,
+  commentValue,
+  userInfo,
+  setIsCommentOpen,
+  isCommentOpen,
+}) {
   return (
-    <div>
-      <div className="flex  items-center bg-gray-100 justify-center mx-auto lg:mt-10 shadow-md mt-5 border-2 mb-2 max-w-xl">
+    <div className="">
+      <div className="flex relative items-center bg-white justify-center mx-auto lg:mt-10 shadow-md mt-5 border-2 mb-2 max-w-xl ">
+        <span
+          className="m-1 absolute right-0 top-0 p-1  cursor-pointer rounded-full hover:bg-gray-300"
+          onClick={setIsCommentOpen(false)}
+        >
+          <Icon name="small-close" />
+        </span>
         <form
-          className="w-full max-w-xl bg-gray-100 rounded-lg px-4 pt-2"
+          className="w-full max-w-xl bg-white rounded-lg px-4 pt-2"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-wrap -mx-3 mb-4">
@@ -45,7 +59,7 @@ function CommentBox({ setCommentValue, handleSubmit, commentValue, userInfo }) {
               <div className="-mr-1">
                 <button
                   type="submit"
-                  className="bg-white text-gray-700 font-medium py-1 px-3 border border-gray-400 text-sm rounded-lg tracking-wide mr-1 hover:bg-gray-100"
+                  className="bg-gradient-to-r from-teal-400 to-blue-500 focus:from-pink-500 focus:outline-none focus:to-orange-500 text-white  px-4 py-1 rounded-lg text-sm"
                   value="Post Comment"
                 >
                   Post Comment

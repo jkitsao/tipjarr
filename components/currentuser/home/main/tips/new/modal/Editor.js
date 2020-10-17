@@ -9,16 +9,26 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
+  Select,
 } from "@chakra-ui/core";
 import AceEditor from "react-ace";
-
 import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-css";
+import "ace-builds/src-noconflict/mode-typescript";
+import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/mode-markdown";
+import "ace-builds/src-noconflict/mode-ruby";
+import "ace-builds/src-noconflict/mode-csharp";
+import "ace-builds/src-noconflict/mode-golang";
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/ext-language_tools";
 function Editormodal({ setCode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [codeValue, setCodeValue] = useState("");
+  const [editorMode, setEditorMode] = useState("javascript");
   const handleLinkSubmit = () => {
     // let links = {
     //   title: linkTitle,
@@ -56,14 +66,32 @@ function Editormodal({ setCode }) {
         <ModalContent>
           <ModalCloseButton />
           <ModalBody className="">
+            <div className="px-2 my-2 w-1/4">
+              <Select
+                placeholder="Choose Language"
+                onChange={(e) => setEditorMode(e.target.value)}
+              >
+                <option value="javascript">javascript</option>
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="typescript">typescript</option>
+                <option value="csharp">csharp</option>
+                <option value="markdown">markdown</option>
+                <option value="json">json</option>
+                <option value="python">python</option>
+                <option value="java">java</option>
+                <option value="ruby">Ruby</option>
+                <option value="golang">golang</option>
+              </Select>
+            </div>
             <AceEditor
-              mode="javascript"
+              mode={editorMode}
               theme="dracula"
               onChange={onChange}
               value={codeValue}
               height={"65vh"}
               //   width="500px"
-              width={"90%"}
+              width={"95%"}
               name="editor"
               fontSize={18}
               highlightActiveLine={true}

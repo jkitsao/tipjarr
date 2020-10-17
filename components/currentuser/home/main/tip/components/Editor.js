@@ -10,7 +10,8 @@ function TipEditor({ tip }) {
       mode="javascript"
       theme="dracula"
       //   onChange={onChange}
-      value={tip.code}
+      defaultValue={tip.code}
+      // value={tip.code}
       height={"50vh"}
       //   width="500px"
       width={"100%"}

@@ -1,11 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap'); */
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    /* background-color: #1a202c; */
-    /* overflow: hidden; */
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 a {
@@ -82,7 +81,7 @@ a {
 {
   position: relative;
   padding: 10px 20px;
-  animation: loader 1s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+  animation: loader .8s cubic-bezier(0.5, 0.1, 0.15, 1) alternate  infinite;
 }
 
 @keyframes loader
@@ -123,35 +122,42 @@ a {
 
 .banner-left
 {
-  animation: sub-banner-left 2s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+  animation: sub-banner-left .8s cubic-bezier(0.5, 0.1, 0.15, 1) alternate  infinite;
 }
 
 @keyframes sub-banner-left
 {
   0%
   {
-    right: 82%;
+    right: 80%;
+    /* background-color: rgb(156, 255, 156); */
+
   }
   100%
   {
-    right: 90%;
+    right: 97%;
+    /* background-color: rgb(76, 253, 76); */
+
   }
 }
 
 .banner-right
 {
-  animation: sub-banner-right 2s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+  animation: sub-banner-right .7s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
 }
 
 @keyframes sub-banner-right
 {
   0%
   {
-    left: 82%;
+    left: 80%;
+    /* background-color: rgb(156, 255, 156); */
   }
   100%
   {
-    left: 90%;
+    left: 97%;
+    /* background-color: rgb(76, 253, 76); */
+
   }
 }
 

@@ -7,6 +7,8 @@ import ToggleCodeImg from "./components/ToggleCodeImg";
 import Link from "next/link";
 import CommentBox from "./components/CommentBox";
 import ToggleComments from "./components/ToggleComments";
+import Linkify from "react-linkify";
+
 function Tip({ tip }) {
   console.log({ tip });
   return (
@@ -27,19 +29,49 @@ function Tip({ tip }) {
                 </a>
               </Link>
             </span>
-            <span className="mx-3 bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white  px-4 py-2 rounded">
+            <span className="mx-3 transition duration-500 ease-in-out bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white  px-4 py-2 rounded">
               <Link href="/new-tip">
                 <a className="">share tip </a>
               </Link>
             </span>
           </div>
-          <div className="p-4 lg-px-6 lg:w-full lg:mx-auto">
+          <div className="p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto">
             <h2 className="text-xl lg:text-2xl font-semibold text-gray-800">
               {tip?.title}
             </h2>
           </div>
-          <div className="px-5 bg-gray-100 my-2 py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 ">
-            <h3 className="text-gray-700 text-sm sm:text-lg ">{tip?.body}</h3>
+          {tip?.link ? (
+            <div
+              className="p-3 bg-gray-100 w-1/3 text-blue-500 mx-6 rounded-sm"
+              title={tip?.link?.title}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-4 h-4 inline-block mx-1"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              <a
+                href={`${tip?.link?.source}`}
+                target="_blank"
+                className=" underline text-sm inline-block "
+              >
+                {tip?.link?.title}
+              </a>
+            </div>
+          ) : null}
+          <div className="px-5 bg-gray-100  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap ">
+            <Linkify style={{ color: "blue" }}>
+              <p className="text-gray-700 text-sm  lg:text-lg">{tip?.body}</p>
+            </Linkify>
           </div>
           <div>
             {/* toggle goes here */}
