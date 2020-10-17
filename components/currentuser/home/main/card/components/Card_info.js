@@ -25,12 +25,15 @@ function Card_info({ tip }) {
   const date = dayjs(tip.createdAt); //.format("DD/MM/YYYY");
   const mydate = dayjs();
   const c = mydate.from(date);
+  const pic =
+    tip?.user?.profile_url?.secure_url ||
+    "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
   return (
     <div className="mb-2 px-2 py-3">
       <div className="flex px-2">
         <div className="inline-block">
           <img
-            src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80"
+            src={pic}
             alt=""
             className="h-8 w-8 rounded-full object-cover inline"
           />

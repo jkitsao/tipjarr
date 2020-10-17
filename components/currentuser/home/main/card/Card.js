@@ -52,7 +52,8 @@ function Card({ tip }) {
         <div className="whitespace-pre-wrap">
           <Linkify>
             <p className="text-sm  text-green-900 inline-block lg:my-2 px-3">
-              {tip.body.slice(0, 200)}...
+              {tip.body.slice(0, 500)}
+              {tip.body.length > 500 && "..."}
             </p>
           </Linkify>
         </div>

@@ -38,13 +38,6 @@ function ToggleCodeImg({ tip }) {
               : "bg-blue-700"
           }`}
           onClick={handleShowCode}
-          initial={{ x: -50 }}
-          animate={{ x: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 20,
-          }}
         >
           {isCodeOpen ? "code" : "show code"}
         </motion.button>
@@ -55,13 +48,6 @@ function ToggleCodeImg({ tip }) {
               : "bg-blue-700"
           }`}
           onClick={handleShowImage}
-          initial={{ x: 50 }}
-          animate={{ x: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 20,
-          }}
         >
           {isImageOpen ? "image" : "show image"}
         </motion.button>

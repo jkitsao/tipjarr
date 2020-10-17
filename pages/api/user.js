@@ -8,7 +8,7 @@ export default async (req, res) => {
     //add new user
     // res.json(req.body);
     const { name, username, email, bio, image, uid } = req.body.profileData;
-    const profile_url = await imageUploader(image);
+    const profile_url = image ? await imageUploader(image) : null;
     User.create({
       name,
       username,
@@ -26,7 +26,7 @@ export default async (req, res) => {
     // if get request return all users
     User.find({})
       .then((users, err) => {
-        res.json({ users, err });
+        res.json({ users });
       })
       .catch((err) => res.json({ err }));
   }
