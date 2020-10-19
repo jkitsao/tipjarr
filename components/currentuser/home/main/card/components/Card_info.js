@@ -2,6 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import updateLocale from "dayjs/plugin/updateLocale";
+import Upvote from "./vote/Upvote";
 function Card_info({ tip }) {
   dayjs.extend(relativeTime);
   dayjs.extend(updateLocale);
@@ -29,7 +30,7 @@ function Card_info({ tip }) {
     tip?.user?.profile_url?.secure_url ||
     "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
   return (
-    <div className="mb-2 px-2 py-3">
+    <div className="mb-2 px-2 py-3 relative">
       <div className="flex px-2">
         <div className="inline-block">
           <img
@@ -45,6 +46,9 @@ function Card_info({ tip }) {
           <div className="text-xs text-gray-800 font-semibold pt-2">
             {c} ago
           </div>
+        </div>
+        <div>
+          <Upvote />
         </div>
       </div>
     </div>

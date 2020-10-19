@@ -14,7 +14,7 @@ function Home({ data }) {
   }, [userInfo]);
   return (
     <div>
-      <section className="sticky inset-0">
+      <section className="sticky inset-0 z-50">
         <Navbar />
       </section>
       <div className="px-2  lg:px-16">
