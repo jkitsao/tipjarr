@@ -1,18 +1,16 @@
 import React from "react";
 // import { Skeleton } from "@chakra-ui/core";
-function Content_loader({ msg }) {
+import { PushSpinner, FlapperSpinner, RotateSpinner } from "react-spinners-kit";
+function Content_loader() {
   return (
-    <div className="w-full h-screen">
-      <div className="w-full lg:w-1/2 mx-auto pt-6 lg:pt-16 ">
-        <div className="w-full mx-auto p-4  lg:p-10 lg:px-32">
-          <div class="container">
-            <div class="banner text-blue-500 ">
-              {msg ? msg : "LOADING...."}
-              <div class="banner-left"></div>
-              <div class="banner-right"></div>
-            </div>
-          </div>
-        </div>
+    <div className="w-full bg-gray-900 h-screen">
+      <div className="text-center  pt-32 push_spinner">
+        <RotateSpinner
+          size={50}
+          color="#00ff00"
+          loading={true}
+          className="w-full"
+        />
       </div>
     </div>
   );

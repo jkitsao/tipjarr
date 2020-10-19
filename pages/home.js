@@ -26,7 +26,7 @@ function home() {
   // const contentLoad = data && data?.tips;
   // data && data?.tips && user
   return (
-    <main className="bg-gray-100 w-full">
+    <main className="  bg-gray-100 w-full">
       {currentUser && userInfo ? (
         <section>
           {data && data.tips ? <Home data={data} /> : <Content_loader />}

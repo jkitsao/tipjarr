@@ -1,6 +1,7 @@
 import React from "react";
 import { firebase } from "../../../../configs/firebase";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 function Dropdown() {
   const router = useRouter();
   const handleSignOut = () => {
@@ -16,7 +17,16 @@ function Dropdown() {
       });
   };
   return (
-    <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+    <motion.div
+      className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
+      initial={{ y: -50, opacity: 0.5 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
       <div
         className="py-1 rounded-md bg-white shadow-xs"
         role="menu"
@@ -46,7 +56,7 @@ function Dropdown() {
           Sign out
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

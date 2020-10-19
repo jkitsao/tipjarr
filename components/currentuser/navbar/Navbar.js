@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Dropdown from "./dropdown/Dropdown";
 import Link from "next/link";
+import { motion } from "framer-motion";
 function Navbar() {
   const [toggleDrop, setToggleDrop] = useState(false);
   const [togglemenu, setToggleMenu] = useState(false);
   return (
     <nav
-      className="bg-gray-200 sticky top-0 border-b-2 border-teal-500 shadow-md  z-50"
-      style={{ zIndex: "1000" }}
+      className=" bg-primary sticky top-0  shadow-md"
+      style={{ zIndex: "10000" }}
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
@@ -77,7 +78,7 @@ function Navbar() {
                 <Link href="/home">
                   <a
                     href="#"
-                    className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-800  focus:outline-none focus:text-gray-700 focus:bg-gray-700 transition duration-150 ease-in-out"
+                    className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-200  focus:outline-none focus:text-gray-700 focus:bg-gray-700 transition duration-150 ease-in-out"
                   >
                     Home
                   </a>
@@ -85,7 +86,7 @@ function Navbar() {
                 <Link href="/new-tip">
                   <a
                     href="#"
-                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                   >
                     Share tip
                   </a>
@@ -93,7 +94,7 @@ function Navbar() {
                 <Link href="#">
                   <a
                     href="#"
-                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                   >
                     About
                   </a>
@@ -101,7 +102,7 @@ function Navbar() {
                 <Link href="#">
                   <a
                     href="#"
-                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                   >
                     Support
                   </a>
@@ -168,7 +169,16 @@ function Navbar() {
       
           Menu open: "block", Menu closed: "hidden"
         --> */}
-      <div className={`${!togglemenu ? "hidden" : "block"} sm:hidden`}>
+      <motion.div
+        className={`${!togglemenu ? "hidden" : "block"} sm:hidden`}
+        initial={{ y: -300, opacity: 0.5 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
+      >
         <div className="px-2 pt-2 pb-3">
           <a
             href="#"
@@ -195,7 +205,7 @@ function Navbar() {
             Calendar
           </a>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 }

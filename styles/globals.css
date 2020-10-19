@@ -152,3 +152,9 @@ a {
   right: -1px;
   border-right-color: #18506F;
 }
+
+.push_spinner{
+  position: fixed;
+   margin-left:50%;
+  margin-top: 13%; 
+}
