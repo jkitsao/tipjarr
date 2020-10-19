@@ -27,7 +27,7 @@ function Card_footer() {
             #css
           </span>
         </div>
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <div>
             <span className="text-xs text-gray-700 font-semibold hover:bg-gray-300 p-2 rounded">
               <svg
@@ -69,7 +69,7 @@ function Card_footer() {
               <span className="mx-1">{like}</span>
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

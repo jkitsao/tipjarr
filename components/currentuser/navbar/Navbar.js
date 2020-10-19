@@ -7,8 +7,8 @@ function Navbar() {
   const [togglemenu, setToggleMenu] = useState(false);
   return (
     <nav
-      className=" bg-primary sticky top-0  shadow-md"
-      style={{ zIndex: "10000" }}
+      className=" bg-primary sticky top-0  shadow-md lg:px-64"
+      // style={{ zIndex: "10000" }}
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">

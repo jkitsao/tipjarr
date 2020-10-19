@@ -29,7 +29,7 @@ function CommentComp({ comment, handleDelete, userInfo, tip }) {
   console.log({ userInfo });
   return (
     <div className="max-w-xxl  my-2 lg:pl-16 lg:px-16">
-      <div className="p-2 shadow rounded-sm lg:py-10 relative ">
+      <div className="p-2  rounded-sm lg:py-6 relative ">
         <section className="flex">
           <img
             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80"

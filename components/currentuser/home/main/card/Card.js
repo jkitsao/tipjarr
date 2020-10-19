@@ -83,6 +83,7 @@ function Card({ tip }) {
         //   </div>
         // )
       }
+      <hr />
       <Card_footer />
     </div>
   );
