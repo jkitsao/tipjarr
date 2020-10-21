@@ -56,7 +56,7 @@ const Signup = () => {
       {errorMsg && <Error msg={errorMsg} setErrorMsg={setErrorMsg} />}
       <div className="w-full  sm:w-3/4 lg:w-1/4 border rounded-md px-6 pb-10 py-4 mt-24 lg:mt-32 bg-white  shadow-xl">
         <div className="my-6">
-          <h1 className="text-xl text-center text-blue-700 font-semibold">
+          <h1 className="text-3xl text-center text-green-600 ">
             Sign up to continue
           </h1>
         </div>
@@ -118,7 +118,7 @@ const Signup = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
-                    className=" py-2 w-full font-normal bg-gray-100 border border-gray-300 px-2 outline-none focus:outline-none focus:border-green-400 "
+                    className=" py-2 w-full font-normal bg-gray-100 border text-gray-800 border-gray-300 px-2 outline-none focus:outline-none focus:border-green-400 "
                     autoComplete="off"
                   />
                   <div className="text-red-700 text-xs">
@@ -133,7 +133,7 @@ const Signup = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
-                    className=" py-2 w-full font-thin bg-gray-100 border border-gray-300 px-2 outline-none focus:outline-none focus:border-green-400 mb-2"
+                    className=" py-2 w-full font-thin bg-gray-100 border text-gray-800 border-gray-300 px-2 outline-none focus:outline-none focus:border-green-400 mb-2"
                   />
                   <div className="text-red-700 text-xs">
                     {errors.password && touched.password && errors.password}

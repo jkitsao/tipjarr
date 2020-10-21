@@ -8,6 +8,13 @@ import { UsercontextProvider, UserContext } from "../context/UserContext";
 import { UserInfoProvider } from "../context/UserInfo";
 import { ThemeProvider } from "@chakra-ui/core";
 import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress"; //nprogress module
+import "nprogress/nprogress.css"; //styles of nprogress
+//Binding events for nprogress
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps }) {
   return (
     <>

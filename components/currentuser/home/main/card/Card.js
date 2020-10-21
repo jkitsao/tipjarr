@@ -3,6 +3,7 @@ import Card_info from "./components/Card_info";
 import Card_footer from "./components/Card_footer";
 import Link from "next/link";
 import Linkify from "react-linkify";
+import { motion } from "framer-motion";
 function Card({ tip }) {
   const { title } = tip;
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
@@ -52,8 +53,8 @@ function Card({ tip }) {
         <div className="whitespace-pre-wrap">
           <Linkify>
             <p className="text-sm  text-green-900 inline-block lg:my-2 px-3">
-              {tip.body.slice(0, 500)}
-              {tip.body.length > 500 && "..."}
+              {tip.body.slice(0, 350)}
+              {tip.body.length > 350 && "..."}
             </p>
           </Linkify>
         </div>
@@ -61,10 +62,11 @@ function Card({ tip }) {
 
       {
         tip?.imageData?.url ? (
-          <div className="p-1">
-            <img
+          <div className="p-1 overflow-hidden">
+            <motion.img
               src={tip.imageData.secure_url}
               className="object-cover h-lg w-full lg:mx-2  rounded "
+              whileHover={{ scale: 1.1 }}
             />
           </div>
         ) : (
