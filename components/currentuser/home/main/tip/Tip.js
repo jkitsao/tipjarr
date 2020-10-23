@@ -8,6 +8,7 @@ import Link from "next/link";
 import CommentBox from "./components/CommentBox";
 import ToggleComments from "./components/ToggleComments";
 import Linkify from "react-linkify";
+import Upvote from "../card/components/vote/Upvote";
 
 function Tip({ tip }) {
   console.log({ tip });
@@ -35,10 +36,12 @@ function Tip({ tip }) {
               </Link>
             </span>
           </div>
-          <div className="p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto">
-            <h2 className="text-xl lg:text-2xl font-semibold text-gray-800">
+          <div className="p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative">
+            <h2 className="text-xl lg:text-2xl font-semibold text-gray-800 w-1/2">
               {tip?.title}
             </h2>
+
+            {/* <Upvote /> */}
           </div>
           {tip?.link ? (
             <div

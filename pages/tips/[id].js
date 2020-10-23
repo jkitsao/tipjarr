@@ -11,12 +11,10 @@ function Singletip() {
   const fetcher = (url) => axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(`/api/tips/${id}`, fetcher(`/api/tips/${id}`));
   return (
-    <div>
-      <div className="bg-primary" style={{ minHeight: "100vh" }}>
-        {data && <Tip tip={data.tip} />}
-      </div>
-      <h2>{!data && <Content_loader />}</h2>
-      <h2>{error && <Content_loader msg={"network error"} />}</h2>
+    <div className="bg-primary" style={{ minHeight: "100vh" }}>
+      <div>{data && <Tip tip={data.tip} />}</div>
+      <div>{!data && <Content_loader />}</div>
+      <div>{error && <Content_loader msg={"network error"} />}</div>
     </div>
   );
 }
