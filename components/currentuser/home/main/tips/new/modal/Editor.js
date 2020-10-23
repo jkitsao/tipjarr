@@ -10,6 +10,7 @@ import {
   useDisclosure,
   Button,
   Select,
+  useToast,
 } from "@chakra-ui/core";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
@@ -29,6 +30,7 @@ function Editormodal({ setCode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [codeValue, setCodeValue] = useState("");
   const [editorMode, setEditorMode] = useState("javascript");
+  const toast = useToast();
   const handleLinkSubmit = () => {
     // let links = {
     //   title: linkTitle,
@@ -47,6 +49,14 @@ function Editormodal({ setCode }) {
   function handleCodeSubmit(e) {
     e.preventDefault();
     setCode(codeValue);
+    toast({
+      position: "top",
+      title: "code success.",
+      description: "code submitted succesfully",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
   }
   return (
     <>

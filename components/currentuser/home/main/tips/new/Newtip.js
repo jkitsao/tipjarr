@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Input, Textarea, Spinner } from "@chakra-ui/core";
+import { Input, Textarea, Spinner, useToast } from "@chakra-ui/core";
 import axios from "axios";
 import { useRouter } from "next/router";
 // import { RichEditorExample } from "./Richtext";
 import Linkmodal from "./modal/Linkmodal";
 // import { useDisclosure } from "@chakra-ui/core";
 import Editormodal from "./modal/Editor";
-import EditorContainer from "./Richtext";
+// import EditorContainer from "./Richtext";
 function Newtip({ user }) {
   const [fileInput, setFileInput] = useState("");
   const [previewSource, setPreviewSource] = useState("");
@@ -17,6 +17,7 @@ function Newtip({ user }) {
   const [links, setLinks] = useState({});
   const [code, setCode] = useState();
   // const { isOpen, onOpen, onClose } = useDisclosure();/
+  const toast = useToast();
 
   //function to handle user input file
   const router = useRouter();
@@ -56,16 +57,32 @@ function Newtip({ user }) {
       .then((res) => {
         // console.log(res);
         // alert(JSON.stringify(tip, null, 2));
+        toast({
+          position: "top",
+          title: "Successfully posted.",
+          description: "Your tip has been created",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
         router.push("/home");
         setSubmiting(false);
       })
       .catch((err) => {
         setSubmiting(false);
-        alert(JSON.stringify(err, null, 2));
+        // alert(JSON.stringify(err, null, 2));
+        toast({
+          position: "top",
+          title: "something went wrong",
+          description: err.message,
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        });
       });
   };
   return (
-    <div className="py-12 px-3">
+    <div className="py-12 px-3 z-0">
       <form onSubmit={handleSubmit} className="">
         <section className="w-full lg:w-1/3 mx-auto px-5 bg-gray-800 rounded-t py-5 ">
           <div>
@@ -74,11 +91,13 @@ function Newtip({ user }) {
                 Tip title
               </h2>
             </div>
-            <div className="w-full">
+            <div className="w-full z-0">
               <Input
                 placeholder="Title"
                 size="lg"
-                className="text-gray-800 font-semibold"
+                zIndices="base"
+                position="static"
+                className="text-gray-800 z-0 font-semibold"
                 backgroundColor="gray.800"
                 color="gray.300"
                 value={title}
@@ -88,11 +107,12 @@ function Newtip({ user }) {
           </div>
         </section>
         {previewSource && (
-          <div className="m-2 w-full lg:w-1/3 mx-auto relative  border-8 ">
+          <div className="m-2 w-full lg:w-1/3 mx-auto  border-4 ">
             <img
               src={previewSource}
               alt=""
-              className="w-full object-cover h-xl"
+              className="w-full object-cover h-xl "
+              position="static"
             />
             <span
               className="absolute top-0 right-0 h-8 w-8 m-4 hover:bg-gray-600 cursor-pointer rounded"
@@ -120,19 +140,28 @@ function Newtip({ user }) {
                 Resources
               </h2>
               <div className="flex">
-                <div className="px-4 py-2 rounded-lg relative hover:bg-gray-900 cursor-pointer">
-                  <img
+                <div className="px-4 py-2 rounded-lg hover:bg-gray-900 cursor-pointer pt-2 overflow-hidden">
+                  {/* <img
                     src="https://img.icons8.com/color/344/image.png"
                     className="h-12"
                     title="add image"
-                  />
+                  /> */}
                   <input
                     type="file"
-                    className="absolute top-0 left-0 h-full cursor-pointer w-16 opacity-0"
+                    id="file"
+                    className="absolute top-0 left-0 h-full cursor-pointer w-16 border-2 "
                     title="add an image"
                     onChange={handleFileInput}
                     // value={fileInput}
+                    // style={{ visibility: "hidden" }}
                   />
+                  <label for="file">
+                    <img
+                      src="https://img.icons8.com/color/344/image.png"
+                      className="h-12"
+                      title="add image"
+                    />
+                  </label>
                   {/* <span className="text-sm text-gray-400">image</span> */}
                 </div>
                 <Linkmodal setLinks={setLinks} />

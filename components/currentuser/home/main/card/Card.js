@@ -8,7 +8,7 @@ function Card({ tip }) {
   const { title } = tip;
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
-    <div className="w-full lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
+    <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
         <Link href={`/tips/${tip._id}`}>
@@ -53,8 +53,8 @@ function Card({ tip }) {
         <div className="whitespace-pre-wrap">
           <Linkify>
             <p className="text-sm  text-green-900 inline-block lg:my-2 px-3">
-              {tip.body.slice(0, 350)}
-              {tip.body.length > 350 && "..."}
+              {tip.body.slice(0, 250)}
+              {tip.body.length > 250 && "..."}
             </p>
           </Linkify>
         </div>

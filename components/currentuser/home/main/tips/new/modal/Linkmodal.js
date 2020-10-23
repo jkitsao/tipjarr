@@ -9,11 +9,13 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
+  useToast,
 } from "@chakra-ui/core";
 function Linkmodal({ setLinks }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [linkTitle, setLinkTitle] = useState("");
   const [linkBody, setLinkBody] = useState("");
+  const toast = useToast();
 
   const handleLinkSubmit = () => {
     // let links = {
@@ -23,6 +25,14 @@ function Linkmodal({ setLinks }) {
     if (!linkBody || !linkTitle) return;
     setLinks({ title: linkTitle, source: linkBody });
     // alert(JSON.stringify(links));
+    toast({
+      position: "top",
+      title: "success.",
+      description: `link to ${linkTitle} submited`,
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
     onClose();
   };
   return (

@@ -12,7 +12,9 @@ function Singletip() {
   const { data, error } = useSWR(`/api/tips/${id}`, fetcher(`/api/tips/${id}`));
   return (
     <div>
-      <div className="bg-gray-200">{data && <Tip tip={data.tip} />}</div>
+      <div className="bg-primary" style={{ minHeight: "100vh" }}>
+        {data && <Tip tip={data.tip} />}
+      </div>
       <h2>{!data && <Content_loader />}</h2>
       <h2>{error && <Content_loader msg={"network error"} />}</h2>
     </div>

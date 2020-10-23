@@ -47,7 +47,10 @@ function Rightbar() {
                   >
                     <img
                       className="h-8 w-8 rounded-full object-cover mx-1"
-                      src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                      src={
+                        user?.profile_url?.url ||
+                        "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                      }
                       alt="avatar"
                     />
                     <p className="text-gray-600 text-sm mx-2">

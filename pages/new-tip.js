@@ -26,7 +26,10 @@ function NewTip() {
   return (
     <>
       {user ? (
-        <main className=" min-h-full bg-gray-900">
+        <main
+          className=" min-h-full bg-gray-900"
+          style={{ minHeight: "100vh" }}
+        >
           <div>
             <Navbar />
             <Newtip user={user} />

@@ -37,7 +37,7 @@ function Content({ data }) {
         className="lg:w-1/4 py-4 px-3 sticky top-0"
         // style={{ position: "-webkit-sticky" }}
       >
-        {/* <Rightbar /> */}
+        <Rightbar />
         {/* <Rightbar /> */}
       </div>
     </div>
