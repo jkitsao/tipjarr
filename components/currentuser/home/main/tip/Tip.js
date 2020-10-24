@@ -23,7 +23,7 @@ function Tip({ tip }) {
     fetcher(`/api/tips/${tip._id}`)
   );
   return (
-    <div className=" mx-5">
+    <div className="lg:mx-5">
       {/* <div>{data && <Tip tip={data.tip} />}</div> */}
       <div>{!data && <Content_loader />}</div>
       <Head>
