@@ -9,19 +9,33 @@ import CommentBox from "./components/CommentBox";
 import ToggleComments from "./components/ToggleComments";
 import Linkify from "react-linkify";
 import Upvote from "../card/components/vote/Upvote";
-
+import { useDisclosure } from "@chakra-ui/core";
+import Tipmodal from "./Tipmmodal";
+import Content_loader from "../../loaders/Content_loader";
+import axios from "axios";
+import useSWR from "swr";
 function Tip({ tip }) {
-  console.log({ tip });
+  // console.log({ tip });
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  const fetcher = (url) => axios.get(url).then((res) => res.data);
+  const { data, error } = useSWR(
+    `/api/tips/${tip._id}`,
+    fetcher(`/api/tips/${tip._id}`)
+  );
   return (
-    <div className="">
+    <div className=" mx-5">
+      {/* <div>{data && <Tip tip={data.tip} />}</div> */}
+      <div>{!data && <Content_loader />}</div>
       <Head>
-        {tip && <title>{tip?.title}</title>}
+        {data && <title>{data?.tip?.title}</title>}
         {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
       </Head>
-      <div className="">{/* <Tipbar /> */}</div>
+      {/* <div className="">
+        <Tipmodal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+      </div> */}
       <div className="flex flex-col justify-center ">
         <div className="lg:w-1/2 lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12">
-          <div className="p-4 sticky top-0 w-full bg-secondary border-b-4 border-yellow-500 z-50">
+          {/* <div className="p-4 sticky top-0 w-full bg-secondary border-b-4 border-yellow-500 z-50">
             <span>
               <Link href="/home">
                 <a className="text-sm text-gray-200">
@@ -35,18 +49,18 @@ function Tip({ tip }) {
                 <a className="">share tip </a>
               </Link>
             </span>
-          </div>
+          </div> */}
           <div className="p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative">
-            <h2 className="text-xl lg:text-2xl font-semibold text-gray-800 w-1/2">
-              {tip?.title}
+            <h2 className="text-xl lg:text-2xl font-semibold text-gray-800 ">
+              {data?.tip?.title}
             </h2>
 
             {/* <Upvote /> */}
           </div>
-          {tip?.link ? (
+          {data?.tip?.link ? (
             <div
               className="p-3 bg-gray-100 w-3/4 lg:w-1/2 whitespace-pre-wrap text-blue-500 mx-6 rounded-sm"
-              title={tip?.link?.title}
+              title={data?.tip?.link?.title}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,27 +77,29 @@ function Tip({ tip }) {
                 />
               </svg>
               <a
-                href={`${tip?.link?.source}`}
+                href={`${data?.tip?.link?.source}`}
                 target="_blank"
                 className=" underline text-sm inline-block "
               >
-                {tip?.link?.source}
+                {data?.tip?.link?.source}
               </a>
             </div>
           ) : null}
           <div className="px-5 bg-gray-100  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap ">
             <Linkify style={{ color: "blue" }}>
-              <p className="text-gray-700 text-sm  lg:text-lg">{tip?.body}</p>
+              <p className="text-gray-700 text-sm  lg:text-lg">
+                {data?.tip?.body}
+              </p>
             </Linkify>
           </div>
           <div>
             {/* toggle goes here */}
-            {!tip?.code && !tip?.imageData?.url ? (
+            {!data?.tip?.code && !data?.tip?.imageData?.url ? (
               ""
             ) : (
-              <ToggleCodeImg tip={tip} />
+              <ToggleCodeImg tip={data?.tip} />
             )}
-            <ToggleComments tip={tip} />
+            <ToggleComments tip={data?.tip} />
           </div>
         </div>
       </div>

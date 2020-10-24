@@ -4,27 +4,44 @@ import Card_footer from "./components/Card_footer";
 import Link from "next/link";
 import Linkify from "react-linkify";
 import { motion } from "framer-motion";
+import Tip from "../tip/Tip";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/core";
 function Card({ tip }) {
   const { title } = tip;
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
     <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
-        <Link href={`/tips/${tip._id}`}>
-          <a>
-            <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
-              {/* <img
+        {/* <Link href={`/tips/${tip._id}`}>
+          <a> */}
+        <h1
+          className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold "
+          onClick={onOpen}
+        >
+          {/* <img
               src="https://img.icons8.com/color/344/idea.png"
               alt=""
               className="h-6 w-6 hidden sm:inline-block ml-2 mx-1"
             /> */}
-              <span className="text-lg sm:text-xl hover:underline inline-block px-3">
-                {tip.title}
-              </span>
-            </h1>
-          </a>
-        </Link>
+          <span className="text-lg sm:text-xl hover:underline inline-block px-3">
+            {tip.title}
+          </span>
+        </h1>
+        {/* </a>
+        </Link> */}
         {tip?.link ? (
           <div className="px-3 py-2 text-blue-500 rounded-sm">
             <svg
@@ -60,33 +77,45 @@ function Card({ tip }) {
         </div>
       </div>
 
-      {
-        tip?.imageData?.url ? (
-          <div className="p-1 overflow-hidden">
-            <motion.img
-              src={tip.imageData.secure_url}
-              className="object-cover h-lg w-full lg:mx-2  rounded "
-              whileHover={{ scale: 1.1 }}
-            />
-          </div>
-        ) : (
-          <div></div>
-        )
-        // ) : (
-        //   <div className="text-center">
-        //     <iframe
-        //       src="https://giphy.com/embed/SUj2bzYiaMcqIOCVRr"
-        //       // width="100"
-        //       // height="200"
-        //       frameBorder="0"
-        //       class="giphy-embed mx-auto w-full h-lg"
-        //       allowFullScreen
-        //     ></iframe>
-        //   </div>
-        // )
-      }
+      {tip?.imageData?.url ? (
+        <div className="p-1 overflow-hidden">
+          <motion.img
+            src={tip.imageData.secure_url}
+            className="object-cover h-lg w-full lg:mx-2  rounded "
+            whileHover={{ scale: 1.1 }}
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
+
       <hr />
       <Card_footer />
+      {/* <Button onClick={onOpen}>Open Modal</Button> */}
+
+      <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent paddingY="10">
+          {/* <ModalHeader>Modal Title</ModalHeader> */}
+          <ModalCloseButton marginTop="5" />
+          <ModalBody>
+            {/* <Lorem count={2} /> */}
+            {/* {JSON.stringify(tip)}
+             */}
+            <div style={{ minHeight: "100vh" }}>
+              <Tip tip={tip} />
+            </div>
+            {/* <Tip /> */}
+          </ModalBody>
+
+          <ModalFooter>
+            <Button variantColor="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
