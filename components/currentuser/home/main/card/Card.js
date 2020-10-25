@@ -36,7 +36,7 @@ function Card({ tip }) {
               alt=""
               className="h-6 w-6 hidden sm:inline-block ml-2 mx-1"
             /> */}
-          <span className="text-lg sm:text-xl hover:underline inline-block px-3">
+          <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
             {tip.title}
           </span>
         </h1>
@@ -95,25 +95,21 @@ function Card({ tip }) {
 
       <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
         <ModalOverlay />
-        <ModalContent paddingY="10">
+        <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}
-          <ModalCloseButton marginTop="5" />
-          <ModalBody>
-            {/* <Lorem count={2} /> */}
-            {/* {JSON.stringify(tip)}
-             */}
-            <div style={{ minHeight: "100vh" }}>
-              <Tip tip={tip} />
-            </div>
-            {/* <Tip /> */}
-          </ModalBody>
+          <ModalCloseButton color="red.700" backgroundColor="grey" />
+          <div style={{ minHeight: "100vh" }}>
+            <Tip tip={tip} />
+          </div>
+          {/* <Tip /> */}
+          {/* </ModalBody> */}
 
-          <ModalFooter>
+          {/* <ModalFooter>
             <Button variantColor="blue" mr={3} onClick={onClose}>
               Close
-            </Button>
-            {/* <Button variant="ghost">Secondary Action</Button> */}
-          </ModalFooter>
+            </Button> 
+             <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter> */}
         </ModalContent>
       </Modal>
     </div>

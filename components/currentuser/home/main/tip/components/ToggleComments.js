@@ -7,7 +7,7 @@ import axios from "axios";
 import { UserInfo } from "../../../../../../context/UserInfo";
 import { Icon, useToast } from "@chakra-ui/core";
 function ToggleComments({ tip }) {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(true);
   const [commentValue, setCommentValue] = useState("");
   const { userInfo } = useContext(UserInfo);
   const [isCommentOpen, setIsCommentOpen] = useState(true);
