@@ -27,7 +27,6 @@ function Upvote({ tip }) {
         userid: userInfo?._id,
         tipid: tip?._id,
       };
-      // mutate(`/api/tips/${tip._id}`, data);
 
       axios
         .post("/api/tips/upvote", { vote })

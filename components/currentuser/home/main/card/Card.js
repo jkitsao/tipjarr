@@ -93,20 +93,14 @@ function Card({ tip }) {
       <Card_footer />
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
-      <Modal
-        preserveScrollBarGap
-        isOpen={isOpen}
-        size="full"
-        onClose={onClose}
-       
-      >
+      <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}
           <ModalCloseButton
             color="red.700"
             backgroundColor="gray.300"
-            marginTop="2"
+            marginTop="6"
           />
           <div style={{ minHeight: "100vh" }}>
             <Tip tip={tip} />
@@ -120,6 +114,11 @@ function Card({ tip }) {
             </Button> 
              <Button variant="ghost">Secondary Action</Button>
           </ModalFooter> */}
+          <ModalCloseButton
+            color="red.700"
+            backgroundColor="gray.300"
+            marginTop="6"
+          />
         </ModalContent>
       </Modal>
     </div>
