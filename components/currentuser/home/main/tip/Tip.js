@@ -25,7 +25,7 @@ function Tip({ tip }) {
     <motion.div
       className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
       // style={{ backgroundImage: `url(${data?.tip?.imageData?.url || null})` }}
-      initial={{ opacity: 0.5 }}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
         type: "spring",
@@ -45,7 +45,7 @@ function Tip({ tip }) {
       <div className="flex flex-col justify-center sm:py-5">
         <div className="lg:w-1/2 rounded-xl lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12 sm:pt-12 px-1">
           <div className="p-1 sm:p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative">
-            <h2 className="text-xl lg:text-2xl font-semibold text-gray-800 ">
+            <h2 className="text-xl lg:text-2xl font-semibold text-green-800 ">
               {data?.tip?.title}
             </h2>
 
@@ -80,11 +80,9 @@ function Tip({ tip }) {
               </a>
             </div>
           ) : null}
-          <div className="px-2 sm:px-5 bg-gray-100  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap lg:pr-5 ">
+          <div className="px-2 sm:px-5  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap lg:pr-5 ">
             <Linkify style={{ color: "blue" }}>
-              <p className="text-gray-700 text-sm  lg:text-sm">
-                {data?.tip?.body}
-              </p>
+              <p className="text-gray-700 text-base">{data?.tip?.body}</p>
             </Linkify>
           </div>
           <div>
