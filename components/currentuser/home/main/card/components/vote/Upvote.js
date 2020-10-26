@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import { Icon } from "@chakra-ui/core";
 import { motion } from "framer-motion";
 import axios from "axios";
-import useSWR, { trigger } from "swr";
+import useSWR, { trigger, mutate } from "swr";
 import { UserInfo } from "../../../../../../../context/UserInfo";
+import { Spinner } from "@chakra-ui/core";
 // import axios from "axios";
 function Upvote({ tip }) {
   const { userInfo } = useContext(UserInfo);
@@ -12,16 +13,22 @@ function Upvote({ tip }) {
     `/api/tips/${tip._id}`,
     fetcher(`/api/tips/${tip._id}`)
   );
-  const v = tip.upvotes.length;
-
-  const [votes, setVotes] = useState(v);
   const [voted, setVoted] = useState(false);
+  // const v = data.tip.upvotes.contains(userInfo._id);
+  // useEffect(() => {
+  //   if (data && data.tip) {
+  //     if (data.tip.upvotes.contains(userInfo._id)) setVoted(true);
+  //   }
+  // }, [data]);
+  // const [votes, setVotes] = useState(v);
   const handleVote = () => {
     if (userInfo && tip) {
       const vote = {
         userid: userInfo?._id,
         tipid: tip?._id,
       };
+      // mutate(`/api/tips/${tip._id}`, data);
+
       axios
         .post("/api/tips/upvote", { vote })
         .then((res) => {
@@ -44,9 +51,13 @@ function Upvote({ tip }) {
       whileTap={{ scale: 0.8 }}
     >
       <Icon name="triangle-up" className="z-0" />
-      <span className="block">{data.tip.upvotes.length}</span>
+      <span className="block">{data?.tip?.upvotes.length}</span>
     </motion.div>
-  ) : null;
+  ) : (
+    <div className="absolute hover:bg-gray-300 right-0 mx-2  px-4">
+      <Spinner />
+    </div>
+  );
 }
 
 export default Upvote;
