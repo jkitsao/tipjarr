@@ -7,7 +7,7 @@ function Comments({ data, handleDelete, tip, userInfo }) {
       <div className="m-6">{!data && <Spinner size="md" />}</div>
       <div>
         {data && data?.comments?.length < 1 && (
-          <h2 className="text-sm text-green-700 my-3">No comments yet</h2>
+          <h2 className="text-sm text-green-700 mx-2 my-3">No comments yet</h2>
         )}
       </div>
       <div>

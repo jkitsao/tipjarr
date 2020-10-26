@@ -27,17 +27,20 @@ function CommentComp({ comment, handleDelete, userInfo, tip }) {
   const mydate = dayjs();
   const c = mydate.from(date);
   console.log({ userInfo });
+  const image =
+    comment?.user?.profile_url?.secure_url ||
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80";
   return (
     <div className="max-w-xxl  my-2 lg:pl-16 lg:px-16">
       <div className="p-2  rounded-sm lg:py-6 relative ">
         <section className="flex">
           <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80"
-            alt=""
+            src={image}
+            alt={comment?.body}
             className="h-8 w-8 mx-3 mt-1 border-2 border-gray-400 rounded-full object-cover"
           />
           <div className=" whitespace-pre-wrap leading-normal">
-            <p className="text-sm text-gray-700 leading-normal">
+            <p className="text-sm text-gray-700 leading-normal lg:mx-4">
               {comment?.body}
             </p>
           </div>

@@ -93,7 +93,13 @@ function Card({ tip }) {
       <Card_footer />
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
-      <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
+      <Modal
+        preserveScrollBarGap
+        isOpen={isOpen}
+        size="full"
+        onClose={onClose}
+       
+      >
         <ModalOverlay />
         <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}

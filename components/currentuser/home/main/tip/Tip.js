@@ -1,19 +1,18 @@
 import React from "react";
 import Head from "next/head";
 import { Icon } from "@chakra-ui/core";
-// import Tipbar from "./components/Tipbar";
-// import TipEditor from "./components/Editor";
 import ToggleCodeImg from "./components/ToggleCodeImg";
 import Link from "next/link";
 import CommentBox from "./components/CommentBox";
 import ToggleComments from "./components/ToggleComments";
 import Linkify from "react-linkify";
 import Upvote from "../card/components/vote/Upvote";
-import { useDisclosure } from "@chakra-ui/core";
-import Tipmodal from "./Tipmmodal";
+// import { useDisclosure } from "@chakra-ui/core";
+// import Tipmodal from "./Tipmmodal";
 import Content_loader from "../../loaders/Content_loader";
 import axios from "axios";
 import useSWR from "swr";
+import { motion } from "framer-motion";
 function Tip({ tip }) {
   // console.log({ tip });
   // const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,9 +22,16 @@ function Tip({ tip }) {
     fetcher(`/api/tips/${tip._id}`)
   );
   return (
-    <div
+    <motion.div
       className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
       // style={{ backgroundImage: `url(${data?.tip?.imageData?.url || null})` }}
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
     >
       {/* <div>{data && <Tip tip={data.tip} />}</div> */}
       <div>{!data && <Content_loader />}</div>
@@ -91,7 +97,7 @@ function Tip({ tip }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

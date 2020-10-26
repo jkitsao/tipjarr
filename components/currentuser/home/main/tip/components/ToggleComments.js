@@ -32,7 +32,7 @@ function ToggleComments({ tip }) {
       .then((res) => {
         setCommentValue("");
         toast({
-          position: "top",
+          position: "bottom",
           title: "success",
           description: "comment has been submited ",
           status: "success",
@@ -44,7 +44,7 @@ function ToggleComments({ tip }) {
       .catch((err) => {
         // alert(JSON.stringify(err, null, 2));
         toast({
-          position: "top",
+          position: "bottom",
           title: "failed",
           description: err.message,
           status: "error",
@@ -60,7 +60,7 @@ function ToggleComments({ tip }) {
         // alert(JSON.stringify(res.data));
         trigger(`/api/comments/${id}`);
         toast({
-          position: "top",
+          position: "bottom",
           title: "deleted successfully",
           description: "comment has been deleted ",
           status: "success",
@@ -71,7 +71,7 @@ function ToggleComments({ tip }) {
       .catch((err) => {
         // alert(JSON.stringify(err, null, 2));
         toast({
-          position: "top",
+          position: "bottom",
           title: "failed",
           description: err.message,
           status: "error",

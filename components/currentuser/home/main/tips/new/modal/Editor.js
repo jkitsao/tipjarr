@@ -31,16 +31,16 @@ function Editormodal({ setCode }) {
   const [codeValue, setCodeValue] = useState("");
   const [editorMode, setEditorMode] = useState("javascript");
   const toast = useToast();
-  const handleLinkSubmit = () => {
-    // let links = {
-    //   title: linkTitle,
-    //   source: linkBody,
-    // };
-    // if (!linkBody || !linkTitle) return;
-    // setLinks({ title: linkTitle, source: linkBody });
-    // // alert(JSON.stringify(links));
-    // onClose();
-  };
+  // const handleLinkSubmit = () => {
+  // let links = {
+  //   title: linkTitle,
+  //   source: linkBody,
+  // };
+  // if (!linkBody || !linkTitle) return;
+  // setLinks({ title: linkTitle, source: linkBody });
+  // // alert(JSON.stringify(links));
+  // onClose();
+  // };
   function onChange(newValue) {
     // console.log("change", newValue);
     // alert(newValue);
@@ -48,13 +48,17 @@ function Editormodal({ setCode }) {
   }
   function handleCodeSubmit(e) {
     e.preventDefault();
-    setCode(codeValue);
+    let code = {
+      value: codeValue,
+      mode: editorMode,
+    };
+    setCode(code);
     toast({
-      position: "top",
+      position: "bottom",
       title: "code success.",
       description: "code submitted succesfully",
       status: "success",
-      duration: 2000,
+      duration: 1500,
       isClosable: true,
     });
   }

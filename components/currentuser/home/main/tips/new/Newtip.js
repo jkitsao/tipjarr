@@ -15,7 +15,7 @@ function Newtip({ user }) {
   const [body, setBody] = useState("");
   const [submiting, setSubmiting] = useState(false);
   const [links, setLinks] = useState({});
-  const [code, setCode] = useState();
+  const [code, setCode] = useState({});
   // const { isOpen, onOpen, onClose } = useDisclosure();/
   const toast = useToast();
 

@@ -24,7 +24,7 @@ const TipSchema = new mongoose.Schema({
     // required:true,
   },
   code: {
-    type: String,
+    type: Object,
   },
   createdAt: {
     type: Date,
