@@ -97,7 +97,11 @@ function Card({ tip }) {
         <ModalOverlay />
         <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}
-          <ModalCloseButton color="red.700" backgroundColor="gray.300" />
+          <ModalCloseButton
+            color="red.700"
+            backgroundColor="gray.300"
+            marginTop="2"
+          />
           <div style={{ minHeight: "100vh" }}>
             <Tip tip={tip} />
           </div>
