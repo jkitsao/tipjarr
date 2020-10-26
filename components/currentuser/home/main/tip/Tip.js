@@ -24,7 +24,7 @@ function Tip({ tip }) {
   );
   return (
     <div
-      className="bg-teal-100 w-full py-5 h-full  tip_gradient"
+      className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
       // style={{ backgroundImage: `url(${data?.tip?.imageData?.url || null})` }}
     >
       {/* <div>{data && <Tip tip={data.tip} />}</div> */}
