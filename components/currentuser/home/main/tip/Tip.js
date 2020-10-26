@@ -24,7 +24,7 @@ function Tip({ tip }) {
   );
   return (
     <div
-      className="bg-teal-100 w-full inset-0 py-5 h-full  tip_gradient"
+      className="bg-teal-100 w-full  h-full  tip_gradient"
       // style={{ backgroundImage: `url(${data?.tip?.imageData?.url || null})` }}
     >
       {/* <div>{data && <Tip tip={data.tip} />}</div> */}
@@ -36,8 +36,8 @@ function Tip({ tip }) {
       {/* <div className="">
         <Tipmodal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       </div> */}
-      <div className="flex flex-col justify-center ">
-        <div className="lg:w-1/2 lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12">
+      <div className="flex flex-col justify-center  ">
+        <div className="lg:w-1/2 lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12 pt-12 px-1">
           <div className="p-1 sm:p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative">
             <h2 className="text-xl lg:text-2xl font-semibold text-gray-800 ">
               {data?.tip?.title}
