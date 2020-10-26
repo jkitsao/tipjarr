@@ -48,7 +48,7 @@ function Card_info({ tip }) {
           </div>
         </div>
         <div>
-          <Upvote />
+          <Upvote tip={tip} />
         </div>
       </div>
     </div>

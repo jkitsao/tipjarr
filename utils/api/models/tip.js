@@ -26,6 +26,9 @@ const TipSchema = new mongoose.Schema({
   code: {
     type: Object,
   },
+  upvotes: {
+    type: Array,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

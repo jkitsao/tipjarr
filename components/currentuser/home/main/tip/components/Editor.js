@@ -25,6 +25,7 @@ function TipEditor({ tip }) {
       height={"50vh"}
       //   width="500px"
       width={"100%"}
+      showGutter={false}
       name="editor"
       fontSize={15}
       highlightActiveLine={false}

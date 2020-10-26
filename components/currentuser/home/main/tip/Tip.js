@@ -53,9 +53,10 @@ function Tip({ tip }) {
           </div>
           {data?.tip?.link ? (
             <div
-              className="p-3 bg-gray-100 w-3/4  text-blue-500 lg:mx-6 rounded-sm"
+              className="p-3  w-3/4  text-blue-500 lg:mx-6 rounded-sm"
               title={data?.tip?.link?.title}
             >
+              <span className="text-gray-700 font-semibold mx-1">source</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -79,7 +80,7 @@ function Tip({ tip }) {
               </a>
             </div>
           ) : null}
-          <div className="px-2 sm:px-5 bg-gray-100  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap ">
+          <div className="px-2 sm:px-5 bg-gray-100  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap lg:pr-5 ">
             <Linkify style={{ color: "blue" }}>
               <p className="text-gray-700 text-sm  lg:text-sm">
                 {data?.tip?.body}
