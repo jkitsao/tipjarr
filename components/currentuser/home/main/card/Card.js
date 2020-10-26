@@ -100,7 +100,7 @@ function Card({ tip }) {
           <ModalCloseButton
             color="red.700"
             backgroundColor="gray.300"
-            marginTop="6"
+            marginTop="4"
           />
           <div style={{ minHeight: "100vh" }}>
             <Tip tip={tip} />
@@ -114,11 +114,6 @@ function Card({ tip }) {
             </Button> 
              <Button variant="ghost">Secondary Action</Button>
           </ModalFooter> */}
-          <ModalCloseButton
-            color="red.700"
-            backgroundColor="gray.300"
-            marginTop="6"
-          />
         </ModalContent>
       </Modal>
     </div>
