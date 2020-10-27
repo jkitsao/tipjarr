@@ -14,13 +14,14 @@ function Upvote({ tip }) {
     fetcher(`/api/tips/${tip._id}`)
   );
   const [voted, setVoted] = useState(false);
+  const [votes, setVotes] = useState([]);
+
   // const v = data.tip.upvotes.contains(userInfo._id);
-  // useEffect(() => {
-  //   if (data && data.tip) {
-  //     if (data.tip.upvotes.contains(userInfo._id)) setVoted(true);
-  //   }
-  // }, [data]);
-  // const [votes, setVotes] = useState(v);
+  useEffect(() => {
+    console.log({ upvote: data.tip.upvotes });
+    setVotes(data?.tip?.upvotes);
+    console.log(votes);
+  }, [tip, data]);
   const handleVote = () => {
     if (userInfo && tip) {
       const vote = {
@@ -39,10 +40,10 @@ function Upvote({ tip }) {
         });
     }
   };
-  return data ? (
+  return tip && data ? (
     <motion.div
       className={`absolute hover:bg-gray-300 right-0 mx-2 focus:bg-day select-none transition-all duration-300 ${
-        voted ? "text-red-600" : "text-gray-800"
+        votes.indexOf(userInfo._id) > 0 ? "text-red-600" : "text-gray-800"
       } text-xs font-semibold px-4 text-center p-1 border rounded-md`}
       onClick={handleVote}
       title={"upvote"}
@@ -50,7 +51,7 @@ function Upvote({ tip }) {
       whileTap={{ scale: 0.8 }}
     >
       <Icon name="triangle-up" className="z-0" />
-      <span className="block">{data?.tip?.upvotes.length}</span>
+      <span className="block">{votes?.length}</span>
     </motion.div>
   ) : (
     <div className="absolute hover:bg-gray-300 right-0 mx-2  px-4">

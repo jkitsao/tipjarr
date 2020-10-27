@@ -80,7 +80,7 @@ function Editormodal({ setCode }) {
         <ModalContent>
           <ModalCloseButton />
           <ModalBody className="">
-            <div className="px-2 my-2 w-1/4">
+            <div className="px-2 my-2 w-3/4  sm:w-1/2  lg:w-1/4">
               <Select
                 placeholder="Choose Language"
                 onChange={(e) => setEditorMode(e.target.value)}
@@ -103,7 +103,7 @@ function Editormodal({ setCode }) {
               theme="dracula"
               onChange={onChange}
               value={codeValue}
-              height={"65vh"}
+              height={"70vh"}
               //   width="500px"
               width={"95%"}
               name="editor"
