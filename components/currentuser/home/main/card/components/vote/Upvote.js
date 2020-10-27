@@ -18,8 +18,10 @@ function Upvote({ tip }) {
 
   // const v = data.tip.upvotes.contains(userInfo._id);
   useEffect(() => {
-    console.log({ upvote: data.tip.upvotes });
-    setVotes(data?.tip?.upvotes);
+    // console.log({ upvote: data.tip.upvotes });
+    if (data) {
+      setVotes(data?.tip?.upvotes);
+    }
     console.log(votes);
   }, [tip, data]);
   const handleVote = () => {
@@ -51,7 +53,7 @@ function Upvote({ tip }) {
       whileTap={{ scale: 0.8 }}
     >
       <Icon name="triangle-up" className="z-0" />
-      <span className="block">{votes?.length}</span>
+      <span className="block">{data?.tip?.upvotes.length}</span>
     </motion.div>
   ) : (
     <div className="absolute hover:bg-gray-300 right-0 mx-2  px-4">
