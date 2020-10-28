@@ -25,7 +25,12 @@ export default async (req, res) => {
   } else if (req.method === "GET") {
     // Handle any other HTTP method
     // if get request return all users
-    const sorter = { createdAt: -1 };
+    // const sorter = { createdAt: -1 };
+    const sorter = [
+      ["createdAt", -1],
+      ["upvotes", -1],
+    ];
+
     Tip.find({})
       .sort(sorter)
       .then((tips, err) => {
