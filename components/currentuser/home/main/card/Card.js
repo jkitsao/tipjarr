@@ -2,6 +2,7 @@ import React from "react";
 import Card_info from "./components/Card_info";
 import Card_footer from "./components/Card_footer";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Linkify from "react-linkify";
 import { motion } from "framer-motion";
 import Tip from "../tip/Tip";
@@ -19,29 +20,25 @@ import {
 function Card({ tip }) {
   const { title } = tip;
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const router = useRouter();
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
     <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
-        {/* <Link href={`/tips/${tip._id}`}>
-          <a> */}
-        <h1
-          className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold "
-          onClick={onOpen}
+        <Link
+          href={`/home?tip=${tip}`}
+          as={`/tips/${tip._id}`}
+          // onClick={onOpen}
         >
-          {/* <img
-              src="https://img.icons8.com/color/344/idea.png"
-              alt=""
-              className="h-6 w-6 hidden sm:inline-block ml-2 mx-1"
-            /> */}
-          <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
-            {tip.title}
-          </span>
-        </h1>
-        {/* </a>
-        </Link> */}
+          <a onClick={!!router.query.tip ? onOpen : null}>
+            <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
+              <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
+                {tip.title}
+              </span>
+            </h1>
+          </a>
+        </Link>
         {tip?.link ? (
           <div className="px-3 py-2 text-blue-500 rounded-sm">
             <svg

@@ -2,6 +2,10 @@ import React from "react";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-dracula";
+import "ace-builds/src-noconflict/theme-solarized_dark";
+import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/theme-github";
+
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-css";
@@ -29,6 +33,7 @@ function TipEditor({ tip }) {
       name="editor"
       fontSize={15}
       highlightActiveLine={false}
+      className="font-mono"
       // editorProps={{ $blockScrolling: true }}
       //   setOptions={{
       //     enableBasicAutocompletion: true,

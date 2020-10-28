@@ -25,7 +25,7 @@ function Tip({ tip }) {
     <motion.div
       className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
       // style={{ backgroundImage: `url(${data?.tip?.imageData?.url || null})` }}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.7 }}
       animate={{ opacity: 1 }}
       transition={{
         type: "spring",
@@ -74,7 +74,7 @@ function Tip({ tip }) {
               <a
                 href={`${data?.tip?.link?.source}`}
                 target="_blank"
-                className=" underline text-sm inline-block "
+                className=" underline text-sm text-blue-500 inline-block "
               >
                 {data?.tip?.link?.title}
               </a>

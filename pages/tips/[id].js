@@ -5,6 +5,7 @@ import axios from "axios";
 import useSWR from "swr";
 import Tip from "../../components/currentuser/home/main/tip/Tip";
 import Content_loader from "../../components/currentuser/home/loaders/Content_loader";
+import Navbar from "../../components/currentuser/navbar/Navbar";
 function Singletip() {
   const router = useRouter();
   const { id } = router.query;
@@ -12,7 +13,10 @@ function Singletip() {
   const { data, error } = useSWR(`/api/tips/${id}`, fetcher(`/api/tips/${id}`));
   return (
     <div className="bg-primary" style={{ minHeight: "100vh" }}>
-      <div>{data && <Tip tip={data.tip} />}</div>
+      <div>
+        <Navbar />
+        {data && <Tip tip={data.tip} />}
+      </div>
       <div>{!data && <Content_loader />}</div>
       <div>{error && <Content_loader msg={"network error"} />}</div>
     </div>
