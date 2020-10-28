@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TipEditor from "./Editor";
+import Image from "next/image";
 import { motion } from "framer-motion";
 function ToggleCodeImg({ tip }) {
   const [isCodeOpen, setIsCodeOpen] = useState(true);
@@ -79,10 +80,19 @@ function ToggleCodeImg({ tip }) {
             damping: 20,
           }}
         >
-          <img
+          {/* <img
             src={tip?.imageData?.secure_url}
             alt={tip?.title}
             className="w-full  object-cover lg:h-xxl"
+          /> */}
+          <Image
+            src={tip.imageData.secure_url}
+            alt="Picture of the author"
+            unsized={true}
+            loading="eager"
+            quality="100"
+            className="object-cover w-full lg:mx-2 lg:h-xxl"
+            // whileHover={{ scale: 1.1 }}
           />
         </motion.div>
       ) : (

@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Dropdown from "./dropdown/Dropdown";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { UserInfo } from "../../../context/UserInfo";
 function Navbar() {
+  const { userInfo } = useContext(UserInfo);
   const [toggleDrop, setToggleDrop] = useState(false);
   const [togglemenu, setToggleMenu] = useState(false);
+  const profile_image =
+    userInfo?.profile_url?.secure_url ||
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
   return (
     <nav
       className=" bg-primary sticky top-0 border-b-4 border-yellow-500 shadow-md lg:px-64"
@@ -142,8 +147,8 @@ function Navbar() {
                   onClick={() => setToggleDrop(!toggleDrop)}
                 >
                   <img
-                    className="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    className="h-8 w-8 object-cover rounded-full"
+                    src={profile_image}
                     alt=""
                   />
                 </button>

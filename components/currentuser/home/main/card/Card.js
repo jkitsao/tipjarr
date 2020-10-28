@@ -3,6 +3,7 @@ import Card_info from "./components/Card_info";
 import Card_footer from "./components/Card_footer";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Linkify from "react-linkify";
 import { motion } from "framer-motion";
 import Tip from "../tip/Tip";
@@ -34,7 +35,8 @@ function Card({ tip }) {
           <a onClick={!!router.query.tip ? onOpen : null}>
             <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
               <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
-                {tip.title}
+                {tip.title.slice(0, 170)}
+                {tip.title.length > 170 && "..."}
               </span>
             </h1>
           </a>
@@ -76,8 +78,17 @@ function Card({ tip }) {
 
       {tip?.imageData?.url ? (
         <div className="p-1 overflow-hidden">
-          <motion.img
+          {/* <motion.img
             src={tip.imageData.secure_url}
+            className="object-cover h-lg w-full lg:mx-2  rounded "
+            whileHover={{ scale: 1.1 }}
+          /> */}
+          <Image
+            src={tip.imageData.secure_url}
+            alt="Picture of the author"
+            unsized={true}
+            quality="100"
+            loading="eager"
             className="object-cover h-lg w-full lg:mx-2  rounded "
             whileHover={{ scale: 1.1 }}
           />
