@@ -14,7 +14,7 @@ function Hero() {
           programming in General
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-6">
-          <button className="px-6 py-3 rounded bg-blue-600 font-semibold text-white">
+          <button className="px-6 lg:px-10 py-2 lg:py-4 text-lg bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold  rounded">
             <Link href="/auth/login">
               <a className="text-white">start now</a>
             </Link>
@@ -22,7 +22,7 @@ function Hero() {
         </div>
       </div>
       {/* <span className="mx-2 my-2 text-sm bg-gray-200"> */}
-      <span className="absolute bottom-0 opacity-50 left-0 mx-2 my-2 p-2 rounded text-xs sm:text-sm bg-gray-700 text-gray-300 ">
+      <span className="absolute bottom-0 opacity-50 left-0 mx-2 my-2 p-2 rounded text-xs sm:text-sm sm:bg-gray-700 text-gray-100 ">
         Photo by{" "}
         <a
           href="https://unsplash.com/@sam_truong?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"

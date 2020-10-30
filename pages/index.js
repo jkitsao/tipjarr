@@ -24,7 +24,12 @@ export default function Home({ data }) {
 }
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://tipjarr.vercel.app/api/tips`);
+  const api_link =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/tips"
+      : `https://tipjarr.vercel.app/api/tips`;
+  const res = await fetch(api_link);
+  console.log(process.env.NODE_ENV + "there you go mate");
   const data = await res.json();
 
   // Pass data to the page via props
