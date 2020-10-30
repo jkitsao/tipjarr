@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 export default function Home({ data }) {
   return (
     <div>
-      <h2 className="text-2xl text-teal-500 text-center">hello there people</h2>
-      {/* <Main_page data={data} />
+      {/* <h2 className="text-2xl text-teal-500 text-center">hello there people</h2> */}
+      <Main_page data={data} />
       <span className="fixed bottom-0 opacity-75 right-0 mx-2 my-2 p-2 rounded text-xs sm:text-sm bg-gray-700 text-gray-300 ">
         Built and maintained by{" "}
         <a
@@ -18,13 +18,13 @@ export default function Home({ data }) {
         <a href="https://github.com/jkitsao" className="text-blue-400">
           Github
         </a>
-      </span> */}
+      </span>
     </div>
   );
 }
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/tips`);
+  const res = await fetch(`https://tipjarr.vercel.app/api/tips`);
   const data = await res.json();
 
   // Pass data to the page via props
