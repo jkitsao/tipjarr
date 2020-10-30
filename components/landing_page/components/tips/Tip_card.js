@@ -1,15 +1,30 @@
 import React from "react";
 import Image from "next/image";
 import Linkify from "react-linkify";
+import { useRouter } from "next/router";
 
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/core";
+import Tip from "../../../currentuser/home/main/tip/Tip";
 function Tip_card({ tip }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const router = useRouter();
   const pic =
     tip?.user?.profile_url?.secure_url ||
     "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
   return (
     <div className="w-full sm:w-3/4 lg:w-1/2">
       <div className="p-3">
-        <div className="bg-white p-3 rounded-lg shadow">
+        <div className="bg-white p-3 rounded-lg shadow border-1 hover:border-gray-400 ">
           <div className="flex">
             <div>
               <div
@@ -55,7 +70,10 @@ function Tip_card({ tip }) {
           </div>
 
           <div className="mt-6">
-            <h3 className="text-gray-700 font-semibold text-lg my-2">
+            <h3
+              className="text-gray-700 hover:text-gray-800 cursor-pointer  font-semibold text-lg my-2"
+              onClick={onOpen}
+            >
               {tip.title.slice(0, 170)}
               {tip.title.length > 170 && "..."}
             </h3>
@@ -174,6 +192,30 @@ function Tip_card({ tip }) {
             </div> */}
         </div>
       </div>
+      <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          {/* <ModalHeader>Modal Title</ModalHeader> */}
+          <ModalCloseButton
+            color="red.700"
+            backgroundColor="gray.300"
+            marginTop="2"
+          />
+          <div style={{ minHeight: "100vh" }}>
+            {/* <Tip tip={tip} /> */}
+            <Tip tip={tip} />
+          </div>
+          {/* <Tip /> */}
+          {/* </ModalBody> */}
+
+          {/* <ModalFooter>
+            <Button variantColor="blue" mr={3} onClick={onClose}>
+              Close
+            </Button> 
+             <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter> */}
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
