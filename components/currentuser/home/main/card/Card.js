@@ -32,7 +32,7 @@ function Card({ tip }) {
           as={`/tips/${tip._id}`}
           // onClick={onOpen}
         >
-          <a onClick={!!router.query.tip ? onOpen : null}>
+          <a onClick={router.query.tip ? onOpen : null}>
             <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
               <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
                 {tip.title.slice(0, 170)}

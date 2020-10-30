@@ -1,0 +1,27 @@
+.main_hero{
+    /* background: url('/hero_v1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    height: 50vh; */
+    background:linear-gradient(0deg, rgba(0, 4, 20, 0.87), rgba(0, 4, 24, 0.863)), url('/hero_v1.jpg');
+  background-size:cover;
+  background-position: center;
+  height: 75vh;
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+    .main_hero{
+        /* background: url('/hero_v1.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        height: 50vh; */
+        background:linear-gradient(0deg, rgba(0, 4, 20, 0.87), rgba(0, 4, 24, 0.863)), url('/hero_v1.jpg');
+      background-size:cover;
+      background-position: center;
+      height: 70vh;
+      min-height:100%;
+      position: relative;
+    }
+  }

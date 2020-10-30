@@ -1,5 +1,6 @@
 import "../styles/tailwind.css";
 import "../styles/globals.css";
+import "../styles/landingpage.css";
 // import "suneditor/dist/css/suneditor.min.css";
 // import 'draft-js/dist/Draft.css';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";

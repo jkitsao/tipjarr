@@ -97,7 +97,7 @@ function Newtip({ user }) {
                 size="lg"
                 zIndices="base"
                 position="static"
-                className="text-gray-800 z-0 font-semibold"
+                className="text-gray-800 font-semibold"
                 backgroundColor="gray.800"
                 color="gray.300"
                 value={title}
