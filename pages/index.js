@@ -1,8 +1,10 @@
 import Main_page from "../components/landing_page/Main";
 import { useRouter } from "next/router";
+import Navigation from "../components/landing_page/components/navbar/Navigation";
 export default function Home({ data }) {
   return (
     <div>
+      <Navigation />
       {/* <h2 className="text-2xl text-teal-500 text-center">hello there people</h2> */}
       <Main_page data={data} />
       {/* <span className="fixed bottom-0 opacity-75 right-0 mx-2 my-2 p-2 rounded text-xs sm:text-sm bg-gray-700 text-gray-300 ">

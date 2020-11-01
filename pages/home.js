@@ -27,7 +27,7 @@ function home() {
   // data && data?.tips && user
   return (
     <main className="  bg-gray-100 w-full">
-      {currentUser && userInfo ? (
+      {currentUser ? (
         <section>
           {data && data.tips ? <Home data={data} /> : <Content_loader />}
           {/* {JSON.stringify(user)} */}
