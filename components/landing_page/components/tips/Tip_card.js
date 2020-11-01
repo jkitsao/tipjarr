@@ -71,7 +71,7 @@ function Tip_card({ tip }) {
 
           <div className="mt-6">
             <h3
-              className="text-gray-700 hover:text-gray-800 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg my-2"
+              className="text-gray-700 hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg my-2"
               onClick={onOpen}
             >
               {tip.title.slice(0, 170)}
@@ -82,7 +82,14 @@ function Tip_card({ tip }) {
               <Linkify>
                 <p className="text-sm  text-green-900 inline-block  lg:my-2">
                   {tip.body.slice(0, 250)}
-                  {tip.body.length > 250 && "..."}
+                  {tip.body.length > 250 && (
+                    <span
+                      className="text-sm cursor-pointer text-blue-600 mx-1"
+                      onClick={onOpen}
+                    >
+                      read more {">"}
+                    </span>
+                  )}
                 </p>
               </Linkify>
             </div>

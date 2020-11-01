@@ -12,8 +12,15 @@ function Hero() {
           {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
           enim deleniti at deserunt accusamus nam officia dolorum illum
           voluptate ea. */}
-          A place to share tips,code,stories and more about the web development
-          community and programming in general
+          {/* A place to share tips,code,stories and more about the web development
+          community and programming in general */}
+          A micro-blogging platform enabling you to{" "}
+          <span className="p-1 m-1 bg-yellow-200 text-gray-700">
+            discover🔎
+          </span>{" "}
+          and{" "}
+          <span className="p-1 m-1 bg-green-300 text-gray-800">share✅</span>{" "}
+          tips on web design and development
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-6">
           <Link href="/auth/signup">
