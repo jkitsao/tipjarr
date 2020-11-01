@@ -1,9 +1,18 @@
 import Main_page from "../components/landing_page/Main";
 import { useRouter } from "next/router";
 import Navigation from "../components/landing_page/components/navbar/Navigation";
+import Head from "next/head";
+
 export default function Home({ data }) {
   return (
     <div>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="UAmwxXvHuG3pvz4KXqAsc4HQRVqCDk9rpjCxFk9hzqU"
+        />
+        <title>tips | for you</title>
+      </Head>
       <Navigation />
       {/* <h2 className="text-2xl text-teal-500 text-center">hello there people</h2> */}
       <Main_page data={data} />
