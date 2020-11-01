@@ -6,7 +6,7 @@ export default async () => {
   const dburi =
     process.env.NODE_ENV == "production"
       ? process.env.MONGODB_PROD
-      : process.env.MONGODB_PROD;
+      : process.env.MONGODB_URI;
   await mongoose
     .connect(dburi, {
       useNewUrlParser: true,
