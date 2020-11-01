@@ -20,7 +20,7 @@ function home() {
   // const [user, setUser] = useState(null);
   useEffect(() => {
     if (!currentUser) {
-      router.push("/auth/login");
+      router.push("/auth/signup");
     }
   }, [currentUser]);
   // const contentLoad = data && data?.tips;

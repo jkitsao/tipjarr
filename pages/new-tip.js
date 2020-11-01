@@ -18,7 +18,7 @@ function NewTip() {
         setUser(user);
       });
     }
-    if (currentUser === null && !user) router.push("/auth/login");
+    if (currentUser === null && !user) router.push("/auth/signup");
   }, [currentUser]);
   console.log({ user });
   console.log({ currentUser });

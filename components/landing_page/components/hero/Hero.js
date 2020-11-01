@@ -14,11 +14,11 @@ function Hero() {
           programming in General
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-6">
-          <button className="px-6 lg:px-10 py-2 lg:py-4 text-lg bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold  rounded">
-            <Link href="/auth/login">
-              <a className="text-white">start now</a>
-            </Link>
-          </button>
+          <Link href="/auth/login">
+            <a className="text-white px-6 lg:px-10 py-2 lg:py-4 text-lg bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500  font-semibold  rounded">
+              start now
+            </a>
+          </Link>
         </div>
       </div>
       {/* <span className="mx-2 my-2 text-sm bg-gray-200"> */}
