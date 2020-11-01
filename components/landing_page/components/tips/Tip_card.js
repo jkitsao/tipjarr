@@ -22,9 +22,9 @@ function Tip_card({ tip }) {
     tip?.user?.profile_url?.secure_url ||
     "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
   return (
-    <div className="w-full sm:w-3/4 lg:w-1/2">
-      <div className="p-3">
-        <div className="bg-white p-3 rounded-lg shadow border-1 hover:border-gray-400 ">
+    <div className="w-full sm:w-3/4 lg:w-3/5 mx-auto">
+      <div className="p-2">
+        <div className="bg-white  p-4 rounded-lg shadow border-1 hover:border-gray-400 ">
           <div className="flex">
             <div>
               <div
@@ -71,19 +71,16 @@ function Tip_card({ tip }) {
 
           <div className="mt-6">
             <h3
-              className="text-gray-700 hover:text-gray-800 cursor-pointer  font-semibold text-lg my-2"
+              className="text-gray-700 hover:text-gray-800 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg my-2"
               onClick={onOpen}
             >
               {tip.title.slice(0, 170)}
               {tip.title.length > 170 && "..."}
             </h3>
-            {/* <p className="text-gray-600 text-sm">
-              {tip.body.slice(0, 250)}
-              {tip.body.length > 250 && "..."}
-            </p> */}
-            <div className="whitespace-pre-wrap">
+
+            <div className="whitespace-pre-wrap lg:pr-5">
               <Linkify>
-                <p className="text-sm  text-green-900 inline-block lg:my-2">
+                <p className="text-sm  text-green-900 inline-block  lg:my-2">
                   {tip.body.slice(0, 250)}
                   {tip.body.length > 250 && "..."}
                 </p>
@@ -192,7 +189,7 @@ function Tip_card({ tip }) {
             </div> */}
         </div>
       </div>
-      <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>
+      <Modal isOpen={isOpen} size="full" onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}
