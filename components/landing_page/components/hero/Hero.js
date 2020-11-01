@@ -16,7 +16,7 @@ function Hero() {
           community and programming in general
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-6">
-          <Link href="/auth/login">
+          <Link href="/auth/signup">
             <a className="text-white px-6 lg:px-10 py-2 lg:py-4 text-lg bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500  font-semibold  rounded">
               start now
             </a>
