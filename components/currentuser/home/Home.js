@@ -19,10 +19,10 @@ function Home({ data }) {
   return (
     <div>
       <section className="sticky inset-0 " style={{ zIndex: "10000" }}>
-        {/* <Navbar /> */}
+        <Navbar />
         {/* <Navigation /> */}
         {/* <Userbar /> */}
-        <UserNav />
+        {/* <UserNav /> */}
       </section>
       <div>
         {/* <h3 className="text-3xl">hello there</h3> */}
