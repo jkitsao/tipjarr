@@ -1,10 +1,27 @@
 import React from "react";
 import Link from "next/link";
+import { firebase } from "../../../../../configs/firebase";
+import { useRouter } from "next/router";
+
 function Navigation() {
+  const router = useRouter();
+
+  const handleSignOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(function () {
+        router.push("/auth/login");
+      })
+      .catch(function (error) {
+        // An error happened.
+        alert(JSON.stringify(error));
+      });
+  };
   return (
     <div className="flex flex-wrap  bg-transparent static top-0">
       <div className="w-full ">
-        <nav className="relative flex flex-wrap items-center justify-between py-1 px-2 lg:py-4 navbar-expand-lg  border-b-2 border-yellow-500 bg-indigo-900">
+        <nav className="relative flex flex-wrap items-center justify-between py-1 px-2 lg:py-4 navbar-expand-lg  border-b-2 border-yellow-500 bg-gray-900">
           <div className=" px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
               <Link href="/">
@@ -51,8 +68,9 @@ function Navigation() {
                 </li>
                 <li className="nav-item">
                   <a
-                    className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75"
+                    className="px-3 py-2 cursor-pointer flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75"
                     // href="#pablo"
+                    onClick={handleSignOut}
                   >
                     Logout
                   </a>

@@ -55,7 +55,7 @@ function Profile_bar({ userInfo }) {
               </div> */}
             </div>
             <div className="text-center mt-12">
-              <h3 className="text-4xl font-semibold leading-normal  text-blue-500 mb-2">
+              <h3 className="text-2xl lg:text-4xl font-semibold leading-normal  text-blue-500 mb-2">
                 hello {userInfo.name}
               </h3>
               <div className="text-sm leading-normal mt-0 mb-2 text-gray-300 ">
@@ -74,7 +74,7 @@ function Profile_bar({ userInfo }) {
             <div className="mt-10 py-10 border-t border-gray-300 text-center">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full lg:w-9/12 px-4">
-                  <p className="mb-4 text-lg leading-relaxed text-gray-100">
+                  <p className="mb-4 text-sm lg:text-lg leading-relaxed text-gray-100">
                     {userInfo.bio}
                   </p>
                   <a
