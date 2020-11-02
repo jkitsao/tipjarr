@@ -98,7 +98,7 @@ function Card({ tip }) {
       )}
 
       <hr />
-      <Card_footer />
+      {/* <Card_footer /> */}
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
       <Modal preserveScrollBarGap isOpen={isOpen} size="full" onClose={onClose}>

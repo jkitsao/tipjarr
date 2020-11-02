@@ -11,7 +11,7 @@ function Userbar({ setimage, values, setEmail }) {
   const [fileInput, setFileInput] = useState("");
   // const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState(
-    "https://cdn4.vectorstock.com/i/1000x1000/51/48/cartoon-character-in-glasses-avatar-young-man-vector-33215148.jpg"
+    "https://img.icons8.com/color/344/test-account.png"
   );
   // console.log({ user, loading, error });
   // const router = useRouter();
@@ -48,7 +48,7 @@ function Userbar({ setimage, values, setEmail }) {
               alt=""
               className="w-32 h-32 object-cover border-8 border-gray-700 mx-auto rounded-full"
             />
-            <div className="w-full mx-auto my-2 text-white bg-green-700 rounded">
+            {/* <div className="w-full mx-auto my-2 text-white bg-green-700 rounded">
               <div className="relative shadow-lg p-1 py-2">
                 <input
                   type="file"
@@ -59,13 +59,32 @@ function Userbar({ setimage, values, setEmail }) {
                 />
                 Add profile
               </div>
-            </div>
+            </div> */}
+
+            <input
+              type="file"
+              id="file"
+              className="absolute top-0 left-0 h-full cursor-pointer w-16 border-2 "
+              title="add an image"
+              onChange={handleFileInput}
+              // value={fileInput}
+              // style={{ visibility: "hidden" }}
+            />
+            <label for="file">
+              <img
+                src="https://img.icons8.com/color/344/lifecycle--v1.png"
+                className="h-12"
+                title="add profile picture"
+              />
+            </label>
+
             <div className="text-gray-700">
               <span className="my-1 mx-3 text-blue-700 block font-semibold">
                 {user && user.displayName}
               </span>
-              <span className="my-1 mx-3 block text-blue-700 font-semibold">
-                {user.email}
+
+              <span className="my-1 mx-3 block px-6 py-3 border bg-gray-200 border-1  text-blue-900 ">
+                <span className="font-semibold">EMAIL📬 :</span> {user.email}
               </span>
             </div>
           </div>

@@ -15,9 +15,35 @@ import {
   useDisclosure,
 } from "@chakra-ui/core";
 import Tip from "../../../currentuser/home/main/tip/Tip";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import updateLocale from "dayjs/plugin/updateLocale";
 function Tip_card({ tip }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
+  //date
+  dayjs.extend(relativeTime);
+  dayjs.extend(updateLocale);
+  dayjs.updateLocale("en", {
+    relativeTime: {
+      future: " %s",
+      past: "%s ago",
+      s: "a few seconds",
+      m: "a minute",
+      mm: "%d minutes",
+      h: "an hour",
+      hh: "%d hours",
+      d: "a day",
+      dd: "%d days",
+      M: "a month",
+      MM: "%d months",
+      y: "a year",
+      yy: "%d years",
+    },
+  });
+  const date = dayjs(tip.createdAt); //.format("DD/MM/YYYY");
+  const mydate = dayjs();
+  const c = mydate.from(date);
   const pic =
     tip?.user?.profile_url?.secure_url ||
     "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
@@ -35,7 +61,7 @@ function Tip_card({ tip }) {
             <div>
               <p className="text-gray-700 font-medium">{tip?.user?.username}</p>
               <div className="flex items-center text-xs text-gray-400">
-                <p className="text-gray-700">3 hours ago</p>
+                <p className="text-gray-700">{c}</p>
                 <p className="px-1">•</p>
                 <p>
                   {tip?.link ? (

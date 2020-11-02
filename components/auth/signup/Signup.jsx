@@ -72,7 +72,7 @@ const Signup = () => {
               .auth()
               .createUserWithEmailAndPassword(values.email, values.password)
               .then((user) => {
-                alert(JSON.stringify(user, null, 2));
+                // alert(JSON.stringify(user, null, 2));
                 setSubmitting(false);
                 router.push("/profile/settings");
               })

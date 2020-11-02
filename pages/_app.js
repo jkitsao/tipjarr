@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import "../styles/landingpage.css";
 // import "suneditor/dist/css/suneditor.min.css";
 // import 'draft-js/dist/Draft.css';
+import * as gtag from "../lib/gtag";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "draft-js/dist/Draft.css";
 import { UsercontextProvider, UserContext } from "../context/UserContext";
@@ -16,6 +17,9 @@ import "nprogress/nprogress.css"; //styles of nprogress
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
+// Track pageviews when changing routes
+Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
+//render application
 function MyApp({ Component, pageProps }) {
   return (
     <>

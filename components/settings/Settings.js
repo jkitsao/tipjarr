@@ -2,10 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { Formik, Field } from "formik";
 import * as yup from "yup";
 import Error from "../alerts/Error";
+// import { useRouter } from "next/router";
 // import Spinner from "../auth/signup/Spinner";
 import { useRouter } from "next/router";
 import Success from "../auth/alerts/Success";
 import { UserContext } from "../../context/UserContext";
+import { UserInfo } from "../../context/UserInfo";
+
 import Userbar from "./Userbar";
 import axios from "axios";
 import {
@@ -24,11 +27,13 @@ const Settings = () => {
   const [user, setUser] = useState();
   const [email, setEmail] = useState(null);
   const [currentUser, setCurrentUser] = useContext(UserContext);
-
+  const { userInfo } = useContext(UserInfo);
+  // const router = useRouter();
   //   console.log({ currentUser });
   // const [user, setUser] = useState(null);
   useEffect(() => {
     if (currentUser) setUser(currentUser);
+    if (userInfo) router.push("/home");
   }, [currentUser]);
   // console.log({ user });
   const router = useRouter();
@@ -57,7 +62,7 @@ const Settings = () => {
       {success && <Success msg="" setSuccess={setSuccess} />}
       <div className="w-full rounded-md overflow-hidden sm:w-full lg:w-1/2 bg-gray-900">
         {/* {!user && <Spinner />} */}
-        {user ? (
+        {user && !userInfo ? (
           <Formik
             initialValues={{
               email: email,
@@ -87,7 +92,7 @@ const Settings = () => {
                 .then((res) => {
                   // console.log(res);
                   setSubmitting(false);
-                  alert(JSON.stringify(res.data, null, 2));
+                  // alert(JSON.stringify(res.data, null, 2));
                   router.push("/home");
                 })
                 .catch((err) => {
@@ -150,11 +155,11 @@ const Settings = () => {
                     {errors.username && touched.username && errors.username}
                   </div> */}
                     <FormControl isRequired>
-                      <FormLabel htmlFor="fname">First name</FormLabel>
+                      <FormLabel htmlFor="fname">Full name</FormLabel>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="First name"
+                        placeholder="Full name"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.name}

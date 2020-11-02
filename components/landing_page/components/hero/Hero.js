@@ -4,16 +4,11 @@ import Navbar from "../../../currentuser/navbar/Navbar";
 import Navigation from "../navbar/Navigation";
 function Hero() {
   return (
-    <main className="main_hero">
+    <main className="main_hero shadow-lg">
       {/* <Navbar /> */}
       {/* <Navigation /> */}
       <div className="lg:w-1/2 mx-auto pt-16 text-center px-3">
         <h2 className="text-white font-semibold font-mono text-xl sm:text-2xl xl:text-4xl sm:text-center">
-          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-          enim deleniti at deserunt accusamus nam officia dolorum illum
-          voluptate ea. */}
-          {/* A place to share tips,code,stories and more about the web development
-          community and programming in general */}
           A micro-blogging platform enabling you to{" "}
           <span className="p-1 m-1 bg-yellow-200 text-gray-700">
             discover🔎
@@ -22,11 +17,15 @@ function Hero() {
           <span className="p-1 m-1 bg-green-300 text-gray-800">share✅</span>{" "}
           tips on web design and development
         </h2>
-        <div className="lg:w-1/4 mx-auto text-center pt-6">
+        <div className="lg:w-1/4 mx-auto text-center pt-10">
           <Link href="/auth/signup">
-            <a className="text-white px-6 lg:px-10 py-2 lg:py-4 text-lg bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500  font-semibold  rounded">
-              start now
-            </a>
+            <button
+              className="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1"
+              type="button"
+              style={{ transition: "all .15s ease" }}
+            >
+              share tips
+            </button>
           </Link>
         </div>
       </div>
