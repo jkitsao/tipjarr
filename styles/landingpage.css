@@ -10,6 +10,18 @@
   height: 50vh;
   position: relative;
 }
+.profile_bar{
+  /* background: url('/hero_v1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  height: 50vh; */
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.555)), url('/hero_v1.jpg');
+background-size:cover;
+background-position: center;
+/* height: 50vh; */
+/* position: relative; */
+}
 ::-webkit-scrollbar {
   width: 0px;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */

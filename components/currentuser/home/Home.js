@@ -8,6 +8,8 @@ import Content from "./main/Content";
 // import Filter from "./main/select/Select";
 import { UserInfo } from "../../../context/UserInfo";
 import Profile_bar from "./main/user_profile/Profile_bar";
+import Navigation from "../../landing_page/components/navbar/Navigation";
+import Userbar from "../../settings/Userbar";
 function Home({ data }) {
   const { userInfo } = useContext(UserInfo);
   useEffect(() => {
@@ -15,9 +17,11 @@ function Home({ data }) {
   }, [userInfo]);
   return (
     <div>
-      {/* <section className="sticky inset-0 " style={{ zIndex: "10000" }}>
-        <Navbar />
-      </section> */}
+      <section className="sticky inset-0 " style={{ zIndex: "10000" }}>
+        {/* <Navbar /> */}
+        {/* <Navigation /> */}
+        <Userbar />
+      </section>
       <div>
         {/* <h3 className="text-3xl">hello there</h3> */}
         <Profile_bar userInfo={userInfo} />

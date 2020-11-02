@@ -17,7 +17,10 @@ function Content({ data }) {
         {/* <LeftNav /> */}
         {/* <LeftNav /> */}
       </div>
-      <div className="w-full sm:w-1/2 lg:w-p-card lg:py-6">
+      <div className="w-full sm:w-1/2 lg:w-3/7 lg:py-6">
+        <h3 className="text-2xl hover:bg-blue-300 p-2 w-1/2 hover:text-gray-800 cursor-pointer font-semibold">
+          here are some of the latest tips
+        </h3>
         <div className="no-stretching">
           {data.tips.map((data) => (
             <Card tip={data} key={data._id} />
