@@ -24,10 +24,10 @@ a {
 
 }
 
-.no-stretching{
+/* .no-stretching{
   align-items: flex-start;
 
-}
+} */
 .card-grid{
   
   columns: 3;

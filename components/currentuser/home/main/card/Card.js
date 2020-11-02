@@ -24,7 +24,7 @@ function Card({ tip }) {
   const router = useRouter();
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
-    <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white mx-auto my-2 cursor-pointer rounded-md sm:pl-4">
+    <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white  my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
         <Link

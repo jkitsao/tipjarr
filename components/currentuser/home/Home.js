@@ -7,6 +7,7 @@ import Content from "./main/Content";
 // import MyComponent from "./main/select/Select";
 // import Filter from "./main/select/Select";
 import { UserInfo } from "../../../context/UserInfo";
+import Profile_bar from "./main/user_profile/Profile_bar";
 function Home({ data }) {
   const { userInfo } = useContext(UserInfo);
   useEffect(() => {
@@ -14,9 +15,13 @@ function Home({ data }) {
   }, [userInfo]);
   return (
     <div>
-      <section className="sticky inset-0 " style={{ zIndex: "10000" }}>
+      {/* <section className="sticky inset-0 " style={{ zIndex: "10000" }}>
         <Navbar />
-      </section>
+      </section> */}
+      <div>
+        {/* <h3 className="text-3xl">hello there</h3> */}
+        <Profile_bar userInfo={userInfo} />
+      </div>
       <div className="px-2  lg:px-16">
         <section className="">
           <Content data={data} />

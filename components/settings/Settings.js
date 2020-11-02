@@ -86,7 +86,7 @@ const Settings = () => {
                 uid: user.uid,
                 image: image,
               };
-              alert(JSON.stringify(profileData, null, 2));
+
               axios
                 .post(`/api/user`, { profileData })
                 .then((res) => {
