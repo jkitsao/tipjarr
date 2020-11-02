@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 function Profile_bar({ userInfo }) {
   return (
     <section classNameName="relative py-16 border border-2 lg:px-32 bg-gray-100 ">
@@ -25,7 +25,7 @@ function Profile_bar({ userInfo }) {
               “
             </div>
             <p className="text-sm text-gray-600 text-center px-5">
-              {userInfo.bio}
+              {userInfo?.bio}
             </p>
             <div className="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">
               ”
@@ -33,11 +33,22 @@ function Profile_bar({ userInfo }) {
           </div>
           <div className="w-full">
             <p className="text-md text-indigo-500 font-bold text-center">
-              {userInfo.name}
+              {userInfo?.name}
             </p>
             <p className="text-xs text-gray-500 text-center">
-              @{userInfo.username}
+              @{userInfo?.username}
             </p>
+          </div>
+          <div className="text-center py-2">
+            <Link href="/new-tip">
+              <a
+                className="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold  px-8 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                style={{ transition: "all .15s ease" }}
+              >
+                share a tip
+              </a>
+            </Link>
           </div>
         </div>
       </div>

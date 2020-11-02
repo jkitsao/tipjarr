@@ -6,7 +6,7 @@ import Tip_card from "./Tip_card";
 function Landing_tips({ data }) {
   return (
     <section className="py-5 sm:px-16 lg:px-64 bg-gray-100">
-      <div className="py-4">
+      <div className="py-8">
         <h2 className="text-center text-xl sm:text-2xl lg:text-3xl font-semibold">
           here are some top/latest tips & stories
         </h2>
