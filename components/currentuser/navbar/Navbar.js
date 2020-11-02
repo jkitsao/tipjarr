@@ -81,26 +81,17 @@ function Navbar() {
             <div className="hidden sm:block sm:ml-6">
               <div className="flex">
                 <Link href="/home">
-                  <a
-                    href="#"
-                    className="px-3 py-2 rounded-md text-lg font-medium leading-5 text-gray-200  focus:outline-none focus:text-gray-700 focus:bg-gray-700 transition duration-150 ease-in-out"
-                  >
+                  <a className="px-3 py-2 rounded-md text-lg font-medium leading-5 text-gray-200  focus:outline-none focus:text-gray-700 focus:bg-gray-700 transition duration-150 ease-in-out">
                     Tipjarr.net
                   </a>
                 </Link>
                 <Link href="/new-tip">
-                  <a
-                    href="#"
-                    className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-yellow-500 "
-                  >
+                  <a className="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-yellow-500 ">
                     hi there {userInfo.username}
                   </a>
                 </Link>
                 <Link href="/new-tip">
-                  <a
-                    href="#"
-                    className="ml-4 px-3 py-2 uppercase rounded-md text-sm font-medium leading-5 text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-                  >
+                  <a className="ml-4 px-3 py-2 uppercase rounded-md text-sm font-medium leading-5 text-gray-200 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">
                     Share tip
                   </a>
                 </Link>
