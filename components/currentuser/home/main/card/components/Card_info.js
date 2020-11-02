@@ -28,7 +28,7 @@ function Card_info({ tip }) {
   const c = mydate.from(date);
   const pic =
     tip?.user?.profile_url?.secure_url ||
-    "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
+    "https://img.icons8.com/color/344/test-account.png";
   return (
     <div className="mb-2 px-2 py-3 relative">
       <div className="flex px-2">

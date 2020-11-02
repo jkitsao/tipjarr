@@ -187,27 +187,29 @@ function Navbar() {
         <div className="px-2 pt-2 pb-3">
           <a
             href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+            className="mt-1 block px-3 py-2 rounded-md text-lg font-medium text-gray-600 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
           >
-            Dashboard
+            Tipjarr
           </a>
-          <a
+          {/* <a
             href="#"
             className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
           >
             Team
-          </a>
+          </a> */}
+          <Link href="/new-tip">
+            <a
+              href="#"
+              className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+            >
+              Share tip
+            </a>
+          </Link>
           <a
             href="#"
             className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
           >
-            Projects
-          </a>
-          <a
-            href="#"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
-          >
-            Calendar
+            About
           </a>
         </div>
       </motion.div>

@@ -46,7 +46,7 @@ function Tip_card({ tip }) {
   const c = mydate.from(date);
   const pic =
     tip?.user?.profile_url?.secure_url ||
-    "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=150&q=80";
+    "https://img.icons8.com/color/344/test-account.png";
   return (
     <div className="w-full sm:w-3/4 lg:w-3/5 mx-auto">
       <div className="p-2">
