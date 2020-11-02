@@ -38,7 +38,7 @@ export async function getServerSideProps() {
   const api_link =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/tips"
-      : `https://tipjarr.net//api/tips`;
+      : `https://tipjarr.net/api/tips`;
   const res = await fetch(api_link);
   console.log(process.env.NODE_ENV + "there you go mate");
   const data = await res.json();

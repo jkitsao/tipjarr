@@ -8,14 +8,17 @@ function Hero() {
       {/* <Navbar /> */}
       {/* <Navigation /> */}
       <div className="lg:w-1/2 mx-auto pt-16 text-center px-3">
-        <h2 className="text-white font-semibold font-mono text-xl sm:text-2xl xl:text-4xl sm:text-center">
-          A micro-blogging platform enabling you to{" "}
+        <h2 className="text-white font-semibold font-mono text-xl leading-relaxed sm:text-2xl xl:text-4xl sm:text-center">
+          The Programming & Web Development Tip Sharing Platform{" "}
           <span className="p-1 m-1 bg-yellow-200 text-gray-700">
             discover🔎
           </span>{" "}
           and{" "}
           <span className="p-1 m-1 bg-green-300 text-gray-800">share✅</span>{" "}
-          tips on web design and development
+          {/* .... Tips for programmers and web developers */}
+          <span className="sm:text-xl mt-4 lg:w-3/4 lg:mx-auto text-yellow-500 font-medium xl:text-2xl block hover:p-3 hover:text-gray-200 hover:bg-yellow-700 cursor-pointer transition-all duration-500">
+            Find best tips on programming and web development
+          </span>
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-10">
           <Link href="/auth/signup">

@@ -4,12 +4,12 @@ function Navigation() {
   return (
     <div className="flex flex-wrap  bg-transparent static top-0">
       <div className="w-full ">
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-4 navbar-expand-lg  border-b-2 border-yellow-500 bg-indigo-900">
+        <nav className="relative flex flex-wrap items-center justify-between py-1 px-2 lg:py-4 navbar-expand-lg  border-b-2 border-yellow-500 bg-indigo-900">
           <div className=" px-4 mx-auto flex flex-wrap items-center justify-between">
             <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
               <Link href="/">
                 <a
-                  className="text-xl  font-bold leading-relaxed inline-block mr-4 py-2  text-white"
+                  className="text-xl  font-bold leading-relaxed inline-block mr-4 py-1 lg:py-2  text-white"
                   // href="#pablo"
                 >
                   tipjarr.net
