@@ -10,13 +10,15 @@ cloudinary.config({
 const imageUploader = async (filestring) => {
   try {
     // const fileStr = req.body.data;
-    const uploadResponse = await cloudinary.uploader.upload(filestring);
-    console.log(uploadResponse);
+    const uploadResponse = await cloudinary.uploader.upload(filestring, {
+      folder: "tipjarr",
+    });
+    // console.log(uploadResponse);
     // res.json({ msg: "uploaded successfully" });
     return uploadResponse;
   } catch (err) {
-    console.error({ err });
-    // res.status(500).json({ err: "Something went wrong" });
+    // console.error({ err });
+    res.status(500).json({ err });
     return err;
   }
 };
