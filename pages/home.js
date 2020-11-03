@@ -18,11 +18,19 @@ function home() {
   const { userInfo } = useContext(UserInfo);
   const router = useRouter();
   // const [user, setUser] = useState(null);
+  // useEffect(() => {
+  //   window.location.reload();
+  // }, []);
   useEffect(() => {
     if (!currentUser) {
       router.push("/auth/signup");
     }
+
+    // if (!userInfo && window) {
+    //   window.location.reload();
+    // }
   }, [currentUser]);
+
   // const contentLoad = data && data?.tips;
   // data && data?.tips && user
   return (

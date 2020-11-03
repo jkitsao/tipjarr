@@ -16,7 +16,7 @@ function CommentBox({
     "https://images.unsplash.com/photo-1603989166244-3e8d9580204d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=152&q=80";
   return (
     <div className="">
-      {/* <div className="flex relative items-center bg-white justify-center mx-auto lg:mt-10 shadow-md mt-5 border-2 mb-2 max-w-xl ">
+      <div className="flex relative items-center bg-white justify-center mx-auto lg:mt-10 shadow-md mt-5 border-2 mb-2 max-w-xl ">
         <span
           className="m-1 absolute right-0 top-0 p-1  cursor-pointer rounded-full hover:bg-gray-300"
           onClick={setIsCommentOpen(false)}
@@ -71,15 +71,15 @@ function CommentBox({
             </div>
           </div>
         </form>
-      </div> */}
-      <form onSubmit={handleSubmit}>
-        {/* <div>
+      </div>
+      {/* <form onSubmit={handleSubmit}> */}
+      {/* <div>
           <img
             src="https://images.unsplash.com/photo-1603989166244-3e8d9580204d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=152&q=80"
             className="object-cover w-8 h-8 rounded-full inline-block"
           />
         </div> */}
-        <div className="mt-6 w-1/2 border p-2 rounded-md border-gray-400  pt-4 flex justify-between">
+      {/* <div className="mt-6 w-1/2 border p-2 rounded-md border-gray-400  pt-4 flex justify-between">
           <div>
             <img
               src={pic}
@@ -133,7 +133,7 @@ function CommentBox({
             Post Comment
           </button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

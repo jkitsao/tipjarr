@@ -85,7 +85,7 @@ function Card({ tip }) {
           /> */}
           <Image
             src={tip.imageData.secure_url}
-            alt="Picture of the author"
+            alt={tip.title + "picture"}
             unsized={true}
             quality="100"
             loading="eager"
