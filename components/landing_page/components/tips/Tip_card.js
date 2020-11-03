@@ -133,7 +133,7 @@ function Tip_card({ tip }) {
                 unsized={true}
                 quality="100"
                 loading="eager"
-                className="object-cover h-lg w-full lg:mx-2  rounded "
+                className="object-cover h-lg lg:h-lgx w-full lg:mx-2  rounded "
                 whileHover={{ scale: 1.1 }}
               />
             </div>

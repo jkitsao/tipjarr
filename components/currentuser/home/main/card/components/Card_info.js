@@ -16,7 +16,7 @@ function Card_info({ tip }) {
       h: "an hour",
       hh: "%d hours",
       d: "a day",
-      dd: "%d days",
+      dd: "%d days ago",
       M: "a month",
       MM: "%d months",
       y: "a year",
