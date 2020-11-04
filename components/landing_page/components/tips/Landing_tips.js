@@ -13,7 +13,7 @@ function Landing_tips({ data }) {
       <div className="lg:w-3/4 lg:mx-6">
         <div className="py-4">
           <h2 className="text-center text-gray-700 lg:text-left text-xl sm:text-2xl lg:text-3xl font-semibold">
-            here are some top/latest tips & stories🚀🚀🚀
+            here are some top/latest tips & tricks🚀🚀🚀
           </h2>
           {/* <Jumbo /> */}
         </div>
