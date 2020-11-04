@@ -37,6 +37,14 @@ function Tip({ tip }) {
       <div>{!data && <Content_loader />}</div>
       <Head>
         {data && <title>{data?.tip?.title}</title>}
+        <meta charset="UTF-8" />
+        <meta name="description" content={data?.tip?.body} />
+        <meta name="keywords" content={data?.tip?.title} />
+        <meta name="author" content={data?.tip?.user?.username} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
         {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" /> */}
       </Head>
       {/* <div className="">
