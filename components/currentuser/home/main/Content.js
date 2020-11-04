@@ -8,7 +8,7 @@ import Rightbar from "./left-nav/right-section/Rightbar";
 // import Userbar from "./top_user_bar/Userbar";
 
 function Content({ data }) {
-  console.log({ data });
+  // console.log({ data });
   return (
     <div className="lg:flex py-2 justify-center">
       {/* flex no-stretching flex-wrap justify-center */}

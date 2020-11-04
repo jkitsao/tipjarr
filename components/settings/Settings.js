@@ -28,9 +28,7 @@ const Settings = () => {
   const [email, setEmail] = useState(null);
   const [currentUser, setCurrentUser] = useContext(UserContext);
   const { userInfo } = useContext(UserInfo);
-  // const router = useRouter();
-  //   console.log({ currentUser });
-  // const [user, setUser] = useState(null);
+
   useEffect(() => {
     if (currentUser) setUser(currentUser);
     if (userInfo) router.push("/home");

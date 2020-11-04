@@ -26,7 +26,7 @@ function CommentComp({ comment, handleDelete, userInfo, tip }) {
   const date = dayjs(comment.createdAt); //.format("DD/MM/YYYY");
   const mydate = dayjs();
   const c = mydate.from(date);
-  console.log({ userInfo });
+  // console.log({ userInfo });
   const image =
     comment?.user?.profile_url?.secure_url ||
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=80";

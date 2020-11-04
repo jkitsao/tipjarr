@@ -31,7 +31,7 @@ function Userbar({ setimage, values, setEmail }) {
       setimage(reader.result);
     };
   };
-  console.log({ "the user": currentUser });
+  // console.log({ "the user": currentUser });
   useEffect(() => {
     if (currentUser) {
       setUser(currentUser);
