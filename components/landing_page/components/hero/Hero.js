@@ -21,7 +21,7 @@ function Hero() {
           </span>
         </h2>
         <div className="lg:w-1/4 mx-auto text-center pt-10">
-          <Link href="/auth/signup">
+          <Link href="/home">
             <button
               className="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1"
               type="button"

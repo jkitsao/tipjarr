@@ -20,7 +20,7 @@ function ToggleComments({ tip }) {
     `/api/comments/${id}`,
     fetcher(`/api/comments/${id}`)
   );
-  console.log({ data });
+  // console.log({ data });
   //comments add function
   const handleSubmit = (e) => {
     e.preventDefault();

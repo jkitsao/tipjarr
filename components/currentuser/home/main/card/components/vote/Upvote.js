@@ -18,11 +18,9 @@ function Upvote({ tip }) {
 
   // const v = data.tip.upvotes.contains(userInfo._id);
   useEffect(() => {
-    // console.log({ upvote: data.tip.upvotes });
     if (data) {
       setVotes(data?.tip?.upvotes);
     }
-    console.log(votes);
   }, [tip, data]);
   const handleVote = () => {
     if (userInfo && tip) {

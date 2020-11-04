@@ -3,7 +3,7 @@ import React from "react";
 import useSWR from "swr";
 import axios from "axios";
 import { PushSpinner, FlapperSpinner, RotateSpinner } from "react-spinners-kit";
-
+import Link from "next/link";
 function Rightbar() {
   const fetcher = (url) => axios.get(url).then((res) => res.data);
   const { data, error } = useSWR("/api/tips", fetcher);
@@ -49,7 +49,13 @@ function Rightbar() {
                         {tip?.user?.username}
                       </div>
                       <div className="leading-5 font-semibold text-gray-900">
-                        {tip.title.slice(0, 100)}
+                        <Link
+                          href={`/tips/${tip._id}`}
+
+                          // onClick={onOpen}
+                        >
+                          <a>{tip.title.slice(0, 100)}</a>
+                        </Link>
                         <a
                           className="text-blue-500 block hover:underline"
                           href={`${tip?.link?.source}`}
@@ -62,12 +68,14 @@ function Rightbar() {
                   </tr>
                 ))
               ) : (
-                <PushSpinner
-                  size={50}
-                  color="#20ffa0"
-                  loading={true}
-                  className="w-full"
-                />
+                <div className="w-3/4 mx-auto mt-48 pl-12">
+                  <PushSpinner
+                    size={50}
+                    color="#20ffa0"
+                    loading={true}
+                    className="w-full"
+                  />
+                </div>
               )}
             </tbody>
           </table>
