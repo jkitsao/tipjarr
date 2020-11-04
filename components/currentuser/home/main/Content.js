@@ -22,7 +22,7 @@ function Content({ data }) {
       </div>
       <div className="w-full sm:w-1/2 lg:w-3/7 lg:py-6">
         <h3 className="text-xl lg:text-2xl hover:bg-blue-300 text-gray-700 p-2 lg:w-1/2 hover:text-yellow-400 cursor-pointer font-semibold">
-          here are some of the latest tips
+          here are some of the latest tips 😁 🚀🚀
         </h3>
         <div className="no-stretching">
           {data.tips.map((data) => (
