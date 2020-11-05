@@ -12,7 +12,7 @@ function Singletip() {
   const fetcher = (url) => axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(`/api/tips/${id}`, fetcher(`/api/tips/${id}`));
   return (
-    <div className="bg-primary" style={{ minHeight: "100vh" }}>
+    <div className="bg-gray-200" style={{ minHeight: "100vh" }}>
       <div>
         <Navbar />
         {data && <Tip tip={data.tip} />}

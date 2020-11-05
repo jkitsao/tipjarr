@@ -13,6 +13,9 @@ import Content_loader from "../../loaders/Content_loader";
 import axios from "axios";
 import useSWR from "swr";
 import { motion } from "framer-motion";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import updateLocale from "dayjs/plugin/updateLocale";
 function Tip({ tip }) {
   // console.log({ tip });
   // const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,6 +24,28 @@ function Tip({ tip }) {
     `/api/tips/${tip._id}`,
     fetcher(`/api/tips/${tip._id}`)
   );
+  dayjs.extend(relativeTime);
+  dayjs.extend(updateLocale);
+  dayjs.updateLocale("en", {
+    relativeTime: {
+      future: " %s",
+      past: "%s ago",
+      s: "a few seconds",
+      m: "a minute",
+      mm: "%d minutes",
+      h: "an hour",
+      hh: "%d hours",
+      d: "a day",
+      dd: "%d days ago",
+      M: "a month",
+      MM: "%d months",
+      y: "a year",
+      yy: "%d years",
+    },
+  });
+  const date = dayjs(data?.tip?.createdAt); //.format("DD/MM/YYYY");
+  const mydate = dayjs();
+  const c = mydate.from(date);
   return (
     <motion.div
       className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
@@ -53,44 +78,64 @@ function Tip({ tip }) {
       <div className="flex flex-col justify-center sm:py-5">
         <div className="lg:w-1/2 rounded-xl lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12 sm:pt-12 px-1">
           <div className="p-1 sm:p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative mt-10 lg:mt-3 pt-3">
-            <h2 className="text-xl lg:text-3xl font-semibold text-green-800 ">
+            <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 leading-tight ">
               {data?.tip?.title}
             </h2>
 
             {/* <Upvote /> */}
           </div>
-          {data?.tip?.link ? (
-            <div
-              className="p-3  w-3/4  text-blue-500 lg:mx-6 rounded-sm"
-              title={data?.tip?.link?.title}
-            >
-              <span className="text-gray-700 font-semibold mx-1">source</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-4 h-4 inline-block mx-1"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-              <a
-                href={`${data?.tip?.link?.source}`}
-                target="_blank"
-                className=" underline text-sm text-blue-500 inline-block "
-              >
-                {data?.tip?.link?.title}
-              </a>
+
+          <div
+            className=" my-1 text-blue-500 lg:mx-6 rounded-sm"
+            title={data?.tip?.link?.title}
+          >
+            <div className="text-sm text-gray-800 font-bold inline mx-6">
+              <img
+                src={
+                  tip?.user?.profile_url?.secure_url ||
+                  "https://img.icons8.com/color/344/test-account.png"
+                }
+                alt=""
+                className="w-6 h-6 mx-1 inline rounded-full object-cover"
+              />
+              {data?.tip?.user?.username}
+              <span className="font-normal mx-3">{c}</span>
             </div>
-          ) : null}
+            {data?.tip?.link ? (
+              <div className="block ml-5 my-2 lg:inline">
+                <span className="text-gray-700 w-1/4 font-semibold mx-1">
+                  source
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-4 h-4 inline-block mx-1"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+                <a
+                  href={`${data?.tip?.link?.source}`}
+                  target="_blank"
+                  className=" underline text-sm text-blue-500 inline-block "
+                >
+                  {data?.tip?.link?.title}
+                </a>
+              </div>
+            ) : null}
+          </div>
+
           <div className="px-2 sm:px-5  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap lg:pr-5 ">
             <Linkify style={{ color: "blue" }}>
-              <p className="text-gray-700 text-base">{data?.tip?.body}</p>
+              <p className="text-gray-700 font-serif text-base lg:text-lg">
+                {data?.tip?.body}
+              </p>
             </Linkify>
           </div>
           <div>
