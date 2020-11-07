@@ -50,8 +50,8 @@ function Tip_card({ tip }) {
     "https://img.icons8.com/color/344/test-account.png";
   return (
     <div className="w-full sm:w-3/4 lg:mx-auto lg:w-3/5">
-      <div className="p-2">
-        <div className="bg-white  p-4 rounded-lg shadow border-1 hover:border-gray-400 ">
+      <div className="lg:p-2">
+        <div className="bg-white p-2 lg:p-4 rounded-lg shadow border-1 hover:border-gray-400 ">
           <div className="flex">
             <div>
               <div
@@ -98,7 +98,7 @@ function Tip_card({ tip }) {
 
           <div className="mt-6">
             <h3
-              className="text-blue-900 uppercase hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg lg:text-xl my-2"
+              className="text-blue-800  hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg lg:text-xl my-2"
               onClick={onOpen}
             >
               {tip.title.slice(0, 170)}
