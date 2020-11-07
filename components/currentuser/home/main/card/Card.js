@@ -7,6 +7,8 @@ import Image from "next/image";
 import Linkify from "react-linkify";
 import { motion } from "framer-motion";
 import Tip from "../tip/Tip";
+import parse from "html-react-parser";
+
 import {
   Modal,
   ModalOverlay,
@@ -24,15 +26,16 @@ function Card({ tip }) {
   const router = useRouter();
   // const slug = title.replace(/\s+/g, "-").toLowerCase();
   return (
-    <div className="w-full select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white  my-2 cursor-pointer rounded-md sm:pl-4">
+    <div className="w-full pb-4 select-none lg:w-full overflow-hidden border hover:border-gray-500 shadow-sm bg-white  my-2 cursor-pointer rounded-md sm:pl-4">
       <Card_info tip={tip} />
       <div className="p-2">
         <Link
-          href={`/home?tip=${tip}`}
+          scroll={false}
+          href={`?tip=${tip}`}
           as={`/tips/${tip._id}`}
           // onClick={onOpen}
         >
-          <a onClick={router.query.tip ? onOpen : null}>
+          <a onClick={!!router.query.tip ? onOpen : null}>
             <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
               <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
                 {tip.title.slice(0, 170)}
@@ -66,12 +69,14 @@ function Card({ tip }) {
             </a>
           </div>
         ) : null}
-        <div className="whitespace-pre-wrap">
+        <div className="">
           <Linkify>
-            <p className="text-sm  text-green-900 inline-block lg:my-2 px-3">
-              {tip.body.slice(0, 250)}
-              {tip.body.length > 250 && "..."}
-            </p>
+            <div
+              className="text-sm  px-3 py-3 overflow-hidden prose prose-sm fade max-w-none"
+              style={{ maxHeight: "10rem" }}
+            >
+              {parse(tip.body, { trim: true })}
+            </div>
           </Linkify>
         </div>
       </div>

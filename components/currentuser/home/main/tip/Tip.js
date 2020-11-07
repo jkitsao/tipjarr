@@ -8,6 +8,7 @@ import ToggleComments from "./components/ToggleComments";
 import Linkify from "react-linkify";
 import Upvote from "../card/components/vote/Upvote";
 // import { useDisclosure } from "@chakra-ui/core";
+import parse from "html-react-parser";
 // import Tipmodal from "./Tipmmodal";
 import Content_loader from "../../loaders/Content_loader";
 import axios from "axios";
@@ -43,9 +44,9 @@ function Tip({ tip }) {
       yy: "%d years",
     },
   });
-  const date = dayjs(data?.tip?.createdAt); //.format("DD/MM/YYYY");
-  const mydate = dayjs();
-  const c = mydate.from(date);
+  const date = dayjs(data?.tip?.createdAt).format("DD/MM/YYYY");
+  // const mydate = dayjs();
+  // const c = mydate.from(date);
   return (
     <motion.div
       className="bg-teal-100 w-full py-2 sm:py-5 h-full  tip_gradient"
@@ -76,9 +77,9 @@ function Tip({ tip }) {
         <Tipmodal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       </div> */}
       <div className="flex flex-col justify-center sm:py-5">
-        <div className="lg:w-1/2 rounded-xl lg:mx-auto bg-white  sm:shadow-lg sm:rounded-md lg:pb-12 sm:pt-12 px-1">
+        <div className="lg:w-1/2 rounded-xl lg:mx-auto bg-white  sm:rounded-md lg:pb-12 sm:pt-12 px-1">
           <div className="p-1 sm:p-4 lg:px-10 lg:py-6 lg:w-full lg:mx-auto relative mt-10 lg:mt-3 pt-3">
-            <h2 className="text-2xl lg:text-5xl font-bold text-gray-800 leading-tight ">
+            <h2 className="text-2xl lg:text-5xl font-bold text-gray-900 leading-tight ">
               {data?.tip?.title}
             </h2>
 
@@ -99,7 +100,7 @@ function Tip({ tip }) {
                 className="w-6 h-6 mx-1 inline rounded-full object-cover"
               />
               {data?.tip?.user?.username}
-              <span className="font-normal mx-3">{c}</span>
+              <span className="font-normal mx-3">{date}</span>
             </div>
             {data?.tip?.link ? (
               <div className="block ml-5 my-2 lg:inline">
@@ -131,11 +132,13 @@ function Tip({ tip }) {
             ) : null}
           </div>
 
-          <div className="px-2 sm:px-5  py-3  border-l-4 border-gray-400 max-h-xl lg:mx-6 whitespace-pre-wrap lg:pr-5 ">
+          <div className="px-2 sm:px-5  py-3 max-h-xl lg:mx-6 whitespace-pre-wrap  ">
             <Linkify style={{ color: "blue" }}>
-              <p className="text-gray-700 font-serif text-base lg:text-lg">
-                {data?.tip?.body}
-              </p>
+              {data && data.tip ? (
+                <article className="prose lg:prose-xl leading-tight max-w-none">
+                  {parse(data?.tip?.body, { trim: true })}
+                </article>
+              ) : null}
             </Linkify>
           </div>
           <div>

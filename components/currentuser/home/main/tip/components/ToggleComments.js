@@ -85,7 +85,7 @@ function ToggleComments({ tip }) {
   return (
     <div className="ml-4 my-10">
       <button
-        className="w-3/4 mx-auto py-3 bg-gray-400 text-gray-800 shadow rounded focus:outline-none "
+        className="w-1/2  py-3 bg-gray-400 text-gray-800 shadow rounded focus:outline-none "
         onClick={handleToggle}
       >
         {!show ? `comments` : "close comments"}

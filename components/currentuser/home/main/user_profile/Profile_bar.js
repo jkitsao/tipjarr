@@ -42,7 +42,7 @@ function Profile_bar({ userInfo }) {
           <div className="text-center py-2">
             <Link href="/new-tip">
               <a
-                className="text-blue-500 bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold  px-8 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                className="text-blue-400 bg-transparent  border border-solid border-blue-500 hover:bg-blue-800 hover:text-white active:bg-blue-600 font-bold  px-8 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1"
                 type="button"
                 style={{ transition: "all .15s ease" }}
               >
