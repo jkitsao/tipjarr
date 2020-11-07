@@ -37,7 +37,7 @@ function Card({ tip }) {
         >
           <a onClick={!!router.query.tip ? onOpen : null}>
             <h1 className="text-lg text-gray-900 sm:max-w-xl sm:whitespace-pre-wrap hover:text-gray-800 font-semibold ">
-              <span className="text-lg sm:text-xl hover:text-blue-800 inline-block px-3">
+              <span className="text-lg  uppercase sm:text-xl hover:text-blue-800 inline-block px-3">
                 {tip.title.slice(0, 170)}
                 {tip.title.length > 170 && "..."}
               </span>
@@ -102,7 +102,6 @@ function Card({ tip }) {
         <div></div>
       )}
 
-      <hr />
       {/* <Card_footer /> */}
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 

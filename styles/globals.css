@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 html,
 body {
   padding: 0;
@@ -13,11 +13,20 @@ a {
   text-decoration:none !important;
 }
 
-p{
+article > p{
   line-height: 1.6 !important;
-  margin: 0.3rem !important;
+  margin:1.2rem 0  !important;
   position: static  !important;
   max-width:99% !important;
+  font-family: 'Open Sans', sans-serif !important;
+  
+
+}
+article > span{
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  /* position: static  !important; */
+  /* max-width:99% !important; */
 
 }
 

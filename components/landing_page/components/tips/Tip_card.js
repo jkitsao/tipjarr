@@ -98,7 +98,7 @@ function Tip_card({ tip }) {
 
           <div className="mt-6">
             <h3
-              className="text-gray-700 hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg my-2"
+              className="text-blue-900 uppercase hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg lg:text-xl my-2"
               onClick={onOpen}
             >
               {tip.title.slice(0, 170)}
@@ -109,7 +109,7 @@ function Tip_card({ tip }) {
               <Linkify>
                 <div
                   className="text-sm prose inline-block max-w-none whitespace-pre-wrap overflow-y-hidden overflow-x-hidden fade lg:my-2"
-                  style={{ maxHeight: "10rem" }}
+                  style={{ maxHeight: "8rem" }}
                 >
                   {parse(tip.body, { trim: true })}
                 </div>
