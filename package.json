@@ -37,6 +37,7 @@
     "react-spinners-kit": "^1.9.1",
     "suneditor-react": "^2.14.2",
     "swr": "^0.3.5",
+    "url-slug": "^2.3.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {

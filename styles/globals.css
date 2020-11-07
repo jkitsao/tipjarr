@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
 html,
 body {
   padding: 0;
@@ -18,7 +18,7 @@ article > p{
   margin:1.2rem 0  !important;
   position: static  !important;
   max-width:99% !important;
-  font-family: 'Open Sans', sans-serif !important;
+  /* font-family: 'Open Sans', sans-serif !important; */
   
 
 }
@@ -29,7 +29,10 @@ article > span{
   /* max-width:99% !important; */
 
 }
-
+p {
+  word-break: break-all !important;
+  white-space: normal !important;
+}
 * {
   box-sizing: border-box;
 }
