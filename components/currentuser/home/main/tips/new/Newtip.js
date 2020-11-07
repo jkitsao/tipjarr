@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import Linkmodal from "./modal/Linkmodal";
 // import { useDisclosure } from "@chakra-ui/core";
 import Editormodal from "./modal/Editor";
+import Tiny from "./Richtext";
 // import EditorContainer from "./Richtext";
 function Newtip({ user }) {
   const [fileInput, setFileInput] = useState("");
@@ -84,14 +85,14 @@ function Newtip({ user }) {
   return (
     <div className="py-12 px-3 z-0">
       <form onSubmit={handleSubmit} className="">
-        <section className="w-full lg:w-1/3 mx-auto px-5 bg-gray-800 rounded-t py-5 ">
+        <section className="w-full lg:w-1/2 mx-auto  px-5 bg-gray-800 rounded-t py-5 ">
           <div>
             <div className="py-2">
               <h2 className="font-semibold text-2xl text-gray-400">
                 Tip title
               </h2>
             </div>
-            <div className="w-full z-0">
+            <div className="w-full z-0 ">
               <Input
                 placeholder="Title"
                 size="lg"
@@ -107,7 +108,7 @@ function Newtip({ user }) {
           </div>
         </section>
         {previewSource && (
-          <div className="m-2 w-full lg:w-1/3 mx-auto  border-4 ">
+          <div className="m-2 w-full lg:w-1/2 mx-auto  border-4 ">
             <img
               src={previewSource}
               alt=""
@@ -133,7 +134,7 @@ function Newtip({ user }) {
             </span>
           </div>
         )}
-        <section className="w-full lg:w-1/3 mx-auto px-5 bg-gray-800 rounded-b pb-3">
+        <section className="w-full lg:w-1/2 mx-auto px-5 bg-gray-800 rounded-b pb-3">
           <div>
             <div className="py-2">
               <h2 className="font-semibold text-2xl text-gray-400">
@@ -172,7 +173,7 @@ function Newtip({ user }) {
               Description
             </h2>
             <div className="w-full">
-              <Textarea
+              {/* <Textarea
                 placeholder="Write tip here"
                 className="text-gray-800 p-3"
                 resize="vertical"
@@ -183,9 +184,9 @@ function Newtip({ user }) {
                 color="gray.300"
                 value={body}
                 onChange={({ target }) => setBody(target.value)}
-              />
+              /> */}
 
-              {/* <EditorContainer /> */}
+              <Tiny body={body} setBody={setBody} />
             </div>
           </div>
           <div className="py-4 mb-4 lg:pt-6">
@@ -194,7 +195,8 @@ function Newtip({ user }) {
               disabled={submiting}
               className="bg-gradient-to-r from-teal-400 to-blue-500 hover:from-pink-500 hover:to-orange-500 text-white font-semibold w-full px-4 py-4 rounded"
             >
-              Post tip
+              {!submiting ? "post tip" : "submiting tip..."}
+
               {submiting && <Spinner size="sm" className="mt-1 mx-1" />}
             </button>
           </div>

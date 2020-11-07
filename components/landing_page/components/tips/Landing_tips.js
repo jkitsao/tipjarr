@@ -6,13 +6,13 @@ import Tip_card from "./Tip_card";
 
 function Landing_tips({ data }) {
   return (
-    <section className="py-5 sm:px-16 lg:pl-64 flex bg-gray-100">
-      <div className="mx-auto lg:w-1/4 lg:pt-4">
+    <section className="py-5  justify-center flex bg-gray-100">
+      {/* <div className="mx-auto lg:w-1/4 lg:pt-4">
         <Rightbar />
-      </div>
-      <div className="lg:w-3/4 lg:mx-6">
+      </div> */}
+      <div className="w-full lg:w-3/4 mx-auto lg:mx-6">
         <div className="py-4">
-          <h2 className="text-center text-gray-700 lg:text-left text-xl sm:text-2xl lg:text-3xl font-semibold">
+          <h2 className="text-center text-gray-700  text-xl sm:text-2xl lg:text-3xl font-semibold">
             here are some top/latest tips & tricks🚀🚀🚀
           </h2>
           {/* <Jumbo /> */}

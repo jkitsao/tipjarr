@@ -3,6 +3,8 @@ import React from "react";
 import useSWR from "swr";
 import axios from "axios";
 import { PushSpinner, FlapperSpinner, RotateSpinner } from "react-spinners-kit";
+import parse from "html-react-parser";
+
 import Link from "next/link";
 function Rightbar() {
   const fetcher = (url) => axios.get(url).then((res) => res.data);
@@ -19,7 +21,7 @@ function Rightbar() {
         </div>
 
         <div
-          className="w-full h-full overflow-auto shadow bg-white"
+          className="w-full h-full overflow-auto overflow-x-hidden whitespace-pre-wrap shadow bg-white"
           id="journal-scroll"
         >
           <table className="w-full">
@@ -27,12 +29,15 @@ function Rightbar() {
               {data && data.tips ? (
                 data.tips.slice(0, 10).map((tip) => (
                   <tr
-                    className="relative transform scale-100
+                    className="relative 
                  text-sm py-1 border-b-2 border-blue-100 cursor-default
     
-                bg-green-200 bg-opacity-25"
+                bg-green-200 bg-opacity-25 overflow-y-hidden"
                   >
-                    <td className="pl-3 w-16 pr-3">
+                    <td
+                      className="pl-3 w-16 pr-3"
+                      style={{ maxHeight: "5rem", maxWidth: "90%" }}
+                    >
                       <div className="text-gray-400">
                         <img
                           src={
@@ -62,7 +67,7 @@ function Rightbar() {
                         ></a>
                       </div>
                       <div className="leading-5 text-gray-700">
-                        {tip.body.slice(0, 140)}...
+                        {parse(tip.body)}
                       </div>
                     </td>
                   </tr>

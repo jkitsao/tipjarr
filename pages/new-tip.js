@@ -43,7 +43,7 @@ function NewTip() {
 
       {user ? (
         <main
-          className=" min-h-full bg-gray-900"
+          className=" min-h-full bg-gray-200"
           style={{ minHeight: "100vh" }}
         >
           <div>

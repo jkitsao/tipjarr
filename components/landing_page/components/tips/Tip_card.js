@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Linkify from "react-linkify";
 import { useRouter } from "next/router";
+import parse from "html-react-parser";
 
 import {
   Modal,
@@ -48,7 +49,7 @@ function Tip_card({ tip }) {
     tip?.user?.profile_url?.secure_url ||
     "https://img.icons8.com/color/344/test-account.png";
   return (
-    <div className="w-full sm:w-3/4 lg:w-3/5">
+    <div className="w-full sm:w-3/4 lg:mx-auto lg:w-3/5">
       <div className="p-2">
         <div className="bg-white  p-4 rounded-lg shadow border-1 hover:border-gray-400 ">
           <div className="flex">
@@ -97,26 +98,21 @@ function Tip_card({ tip }) {
 
           <div className="mt-6">
             <h3
-              className="text-gray-700 hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg my-2"
+              className="text-blue-900 uppercase hover:text-blue-700 lg:w-4/5 cursor-pointer lg:mr-6 font-semibold text-lg lg:text-xl my-2"
               onClick={onOpen}
             >
               {tip.title.slice(0, 170)}
               {tip.title.length > 170 && "..."}
             </h3>
 
-            <div className="whitespace-pre-wrap lg:pr-5">
+            <div className=" overflow-y-hidden whitespace-pre-wrap lg:pr-5">
               <Linkify>
-                <p className="text-sm  text-green-900 inline-block  lg:my-2">
-                  {tip.body.slice(0, 250)}
-                  {tip.body.length > 250 && (
-                    <span
-                      className="text-sm cursor-pointer text-blue-600 mx-1"
-                      onClick={onOpen}
-                    >
-                      read more {">"}
-                    </span>
-                  )}
-                </p>
+                <div
+                  className="text-sm prose inline-block max-w-none whitespace-pre-wrap overflow-y-hidden overflow-x-hidden fade lg:my-2"
+                  style={{ maxHeight: "8rem" }}
+                >
+                  {parse(tip.body, { trim: true })}
+                </div>
               </Linkify>
             </div>
           </div>
@@ -207,19 +203,9 @@ function Tip_card({ tip }) {
             backgroundColor="gray.300"
             marginTop="2"
           />
-          <div style={{ minHeight: "100vh" }}>
-            {/* <Tip tip={tip} /> */}
+          <div>
             <Tip tip={tip} />
           </div>
-          {/* <Tip /> */}
-          {/* </ModalBody> */}
-
-          {/* <ModalFooter>
-            <Button variantColor="blue" mr={3} onClick={onClose}>
-              Close
-            </Button> 
-             <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
     </div>

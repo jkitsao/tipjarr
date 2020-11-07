@@ -16,10 +16,10 @@ function Content({ data }) {
       {/* <div className=" hidden sm:block  px-6 mr-5">
         {
       </div> */}
-      <div className="lg:w-1/4 py-4 px-3 sticky top-0">
-        {/* <Rightbar /> */}
+      {/* <div className="lg:w-1/4 py-4 px-3 sticky top-0">
+      
         <Rightbar />
-      </div>
+      </div> */}
       <div className="w-full sm:w-1/2 lg:w-3/7 lg:py-6">
         <h3 className="text-xl lg:text-2xl hover:bg-blue-300 text-gray-700 p-2 lg:w-1/2 hover:text-yellow-400 cursor-pointer font-semibold">
           here are some of the latest tips 😁 🚀🚀
