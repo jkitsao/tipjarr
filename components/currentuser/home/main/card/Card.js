@@ -72,7 +72,7 @@ function Card({ tip }) {
         <div className="">
           <Linkify>
             <div
-              className="text-sm  px-3 py-3 overflow-hidden prose prose-sm fade max-w-none"
+              className="text-sm   px-3 py-3 overflow-hidden prose prose-lg fade max-w-none"
               style={{ maxHeight: "10rem" }}
             >
               {parse(tip.body, { trim: true })}

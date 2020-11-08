@@ -108,7 +108,7 @@ function Tip_card({ tip }) {
             <div className=" overflow-y-hidden whitespace-pre-wrap lg:pr-5">
               <Linkify>
                 <div
-                  className="text-sm prose inline-block max-w-none whitespace-pre-wrap overflow-y-hidden overflow-x-hidden fade lg:my-2"
+                  className="text-sm prose prose-lg inline-block max-w-none whitespace-pre-wrap overflow-y-hidden overflow-x-hidden fade lg:my-2"
                   style={{ maxHeight: "8rem" }}
                 >
                   {parse(tip.body, { trim: true })}

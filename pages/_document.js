@@ -12,6 +12,8 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="UAmwxXvHuG3pvz4KXqAsc4HQRVqCDk9rpjCxFk9hzqU"
           />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-M1FXHHQC3B`}
