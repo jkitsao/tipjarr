@@ -16,18 +16,31 @@ class Tiny extends Component {
         init={{
           height: 350,
           menubar: true,
-          plugins: "code",
-          toolbar: "code",
+          plugins: "codesample",
+          codesample_languages: [
+            { text: "HTML/XML", value: "markup" },
+            { text: "JavaScript", value: "javascript" },
+            { text: "CSS", value: "css" },
+            { text: "PHP", value: "php" },
+            { text: "Ruby", value: "ruby" },
+            { text: "Python", value: "python" },
+            { text: "Java", value: "java" },
+            { text: "C", value: "c" },
+            { text: "C#", value: "csharp" },
+            { text: "C++", value: "cpp" },
+          ],
+          toolbar: "codesample",
+
           plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
             "insertdatetime media table paste code help wordcount",
-            "code",
+            "codesample",
           ],
           toolbar:
-            "undo redo | formatselect | bold italic backcolor | \
+            "undo redo | formatselect | codesample| bold italic backcolor | \
             alignleft aligncenter alignright alignjustify | \
-            bullist numlist outdent indent | removeformat | help | code",
+            bullist numlist outdent indent | removeformat | help ",
         }}
         onEditorChange={this.handleEditorChange}
       />

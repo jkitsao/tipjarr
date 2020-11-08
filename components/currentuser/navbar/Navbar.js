@@ -12,7 +12,7 @@ function Navbar() {
     "https://img.icons8.com/color/344/test-account.png";
   return (
     <nav
-      className=" bg-primary sticky top-0 border-b-4 border-yellow-500 shadow-md lg:px-64"
+      className=" bg-primary  border-b-4 border-yellow-500 shadow-md lg:px-64"
       // style={{ zIndex: "10000" }}
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

@@ -136,7 +136,7 @@ function Tip({ tip }) {
           <div className="px-2 sm:px-5  py-3 max-h-xl lg:mx-6 whitespace-pre-wrap  ">
             <Linkify style={{ color: "blue" }}>
               {data && data.tip ? (
-                <article className="prose prose-xl max-w-none">
+                <article className="prose prose-sm lg:prose-xl max-w-none">
                   {parse(data?.tip?.body, { trim: true })}
                 </article>
               ) : null}
