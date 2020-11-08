@@ -18,7 +18,8 @@ Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 // Track pageviews when changing routes
-Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
+process.env.NODE_ENV == "production" &&
+  Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 //render application
 function MyApp({ Component, pageProps }) {
   return (
